@@ -13,10 +13,12 @@
 
   font-family: 'Roboto', sans-serif;
 }
+
 body {
   background: #3F5765;
 }
 
+/*Header section*/
 header {
   padding: 0 5%;
   background: #2B3A42;
@@ -34,6 +36,7 @@ header {
   margin-left: auto;
 }
 
+/*Main section*/
 main {
   padding: 0 5%;
   background: rgba(239,239,239, 0.2);
@@ -51,6 +54,28 @@ main {
   list-style-type: none;
 }
 
-.comment {
+.respond {
+  display: flex;
+}
+
+.comment * {
+  display: flex;
   text-align: justify;
+}
+
+/*Media*/
+.avatar {
+  border-radius: 100%;
+}
+
+.avatar-sm {
+  width: 32px;
+}
+
+.avatar-md {
+  width: 64px;
+}
+
+.avatar-lg {
+  width: 128px;
 }
