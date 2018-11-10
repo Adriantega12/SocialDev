@@ -1,19 +1,28 @@
 /*
   Palette used:
-  - Dark blue: #2B3A42;
-  - Blue: #3F5765;
-  - Light blue: #BDD4DE;
-  - Gray-ish: #EFEFEF;
-  - Orange: #E45E2C;
+  - Dark blue:  #2B3A42 rgb(43,58,66)
+  - Blue:       #3F5765 rgb(63,87,101)
+  - Light blue: #BDD4DE rgb(189,212,222)
+  - Gray-ish:   #EFEFEF rgb(239,239,239)
+  - Orange:     #E45E2C rgb(228,94,44)
  */
 
 * {
   margin: 0;
   padding: 0;
+
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background: #3F5765;
+}
+
+header {
+  padding: 0 5%;
+  background: #2B3A42;
 }
 
 .navbar {
-  background: #2B3A42;
 }
 
 .navbar > ul {
@@ -23,4 +32,17 @@
 
 .navbar-right {
   margin-left: auto;
+}
+
+main {
+  padding: 0 5%;
+  background: rgba(239,239,239, 0.2);
+}
+
+.module {
+  background: #EFEFEF;
+}
+
+.blog-post {
+  text-align: justify;
 }
