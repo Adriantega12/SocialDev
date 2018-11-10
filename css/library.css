@@ -46,3 +46,11 @@ main {
 .blog-post {
   text-align: justify;
 }
+
+.comment-list {
+  list-style-type: none;
+}
+
+.comment {
+  text-align: justify;
+}
