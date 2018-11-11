@@ -7,6 +7,11 @@
   - Orange:     #E45E2C rgb(228,94,44)
  */
 
+/***Older browser support***/
+header, section, footer, aside, nav, main, article, figure {
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
