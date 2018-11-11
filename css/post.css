@@ -2,16 +2,21 @@
   text-align: justify;
 }
 
+.blog-post > p {
+  line-height: 1.5em;
+  margin-bottom: 8px;
+}
+
 .comment-list {
   list-style-type: none;
 }
 
-.respond {
+.respond-form {
   display: flex;
   justify-content: center;
 }
 
-.respond input {
+.respond-form input {
   display: block;
 }
 
