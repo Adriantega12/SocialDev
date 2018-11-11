@@ -56,16 +56,17 @@ main {
 
 .respond {
   display: flex;
+  /*align-items: center;*/
+  justify-content: center;
+}
+
+.respond input {
+  display: block;
 }
 
 .comment {
   text-align: justify;
   display: flex;
-  /*align-content: flex-start;*/
-}
-
-.comment > h1 {
-  /*flex-direction: column;*/
 }
 
 /*Media*/
