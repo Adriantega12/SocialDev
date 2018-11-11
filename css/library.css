@@ -58,9 +58,14 @@ main {
   display: flex;
 }
 
-.comment * {
-  display: flex;
+.comment {
   text-align: justify;
+  display: flex;
+  /*align-content: flex-start;*/
+}
+
+.comment > h1 {
+  /*flex-direction: column;*/
 }
 
 /*Media*/
@@ -70,12 +75,15 @@ main {
 
 .avatar-sm {
   width: 32px;
+  height: 32px;
 }
 
 .avatar-md {
   width: 64px;
+  height: 64px;
 }
 
 .avatar-lg {
   width: 128px;
+  height: 128px;
 }
