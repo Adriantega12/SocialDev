@@ -12,13 +12,15 @@
   padding: 0;
 
   font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #2B3A42;
 }
 
 body {
   background: #3F5765;
 }
 
-/*--------- Everything related to the navbar ---------*/
+/********** Everything related to the navbar **********/
 /*
 The navbar will almost always be reused across the page.
 So it makes sense to put all the CSS related to the nav
@@ -38,7 +40,7 @@ header {
   margin-left: auto;
 }
 
-/*Main section*/
+/***Main section***/
 main {
   padding: 16px 5%;
   background: rgba(239,239,239, 0.2);
@@ -49,7 +51,20 @@ main {
   background: #EFEFEF;
 }
 
-/*Avatar thumbnail usage*/
+/***Stylings***/
+.title {
+  margin: 16px 0;
+}
+
+.main-title {
+  font-size: 1.8em;
+}
+
+.section-title {
+  font-size: 1.3em;
+}
+
+/***Avatar thumbnail usage***/
 .avatar {
   margin: 8px;
   border-radius: 100%;
