@@ -71,7 +71,7 @@ main {
 
 /***Avatar thumbnail usage***/
 .avatar {
-  margin: 8px;
+  /*margin: 16px;*/
   border-radius: 100%;
 }
 
