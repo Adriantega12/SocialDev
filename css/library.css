@@ -29,9 +29,6 @@ header {
   background: #2B3A42;
 }
 
-.navbar {
-}
-
 .navbar > ul {
   display: flex;
   list-style-type: none;
@@ -43,16 +40,18 @@ header {
 
 /*Main section*/
 main {
-  padding: 0 5%;
+  padding: 16px 5%;
   background: rgba(239,239,239, 0.2);
 }
 
 .module {
+  padding: 32px 32px;
   background: #EFEFEF;
 }
 
 /*Avatar thumbnail usage*/
 .avatar {
+  margin: 8px;
   border-radius: 100%;
 }
 
@@ -62,11 +61,11 @@ main {
 }
 
 .avatar-md {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
 }
 
 .avatar-lg {
-  width: 128px;
-  height: 128px;
+  width: 64px;
+  height: 64px;
 }
