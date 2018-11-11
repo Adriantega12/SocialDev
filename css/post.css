@@ -1,0 +1,21 @@
+.blog-post {
+  text-align: justify;
+}
+
+.comment-list {
+  list-style-type: none;
+}
+
+.respond {
+  display: flex;
+  justify-content: center;
+}
+
+.respond input {
+  display: block;
+}
+
+.comment {
+  text-align: justify;
+  display: flex;
+}

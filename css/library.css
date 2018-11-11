@@ -18,7 +18,12 @@ body {
   background: #3F5765;
 }
 
-/*Header section*/
+/*--------- Everything related to the navbar ---------*/
+/*
+The navbar will almost always be reused across the page.
+So it makes sense to put all the CSS related to the nav
+in the library itself.
+ */
 header {
   padding: 0 5%;
   background: #2B3A42;
@@ -46,30 +51,7 @@ main {
   background: #EFEFEF;
 }
 
-.blog-post {
-  text-align: justify;
-}
-
-.comment-list {
-  list-style-type: none;
-}
-
-.respond {
-  display: flex;
-  /*align-items: center;*/
-  justify-content: center;
-}
-
-.respond input {
-  display: block;
-}
-
-.comment {
-  text-align: justify;
-  display: flex;
-}
-
-/*Media*/
+/*Avatar thumbnail usage*/
 .avatar {
   border-radius: 100%;
 }
