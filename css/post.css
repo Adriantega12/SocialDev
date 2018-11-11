@@ -4,12 +4,20 @@
 
 .blog-post > p {
   line-height: 1.5em;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .author {
   display: flex;
   justify-content: center;
+}
+
+.author-description {
+
+}
+
+.score {
+  opacity: 0.5;
 }
 
 .comment-list {
