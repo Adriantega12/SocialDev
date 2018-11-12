@@ -12,6 +12,7 @@ header, section, footer, aside, nav, main, article, figure {
   display: block;
 }
 
+/**** Page specifics ****/
 * {
   margin: 0;
   padding: 0;
@@ -31,13 +32,11 @@ So it makes sense to put all the CSS related to the nav
 in the library itself.
  */
 header {
-  padding: 0 5%;
   background: #2B3A42;
 }
 
 .navbar {
   height: 48px;
-  padding: 0 5%;
   color: #EFEFEF;
   list-style-type: none;
   display: flex;
@@ -60,7 +59,7 @@ header {
   margin: 0 8px;
 }
 
-.navbar li:first-child {
+.navbar li:first-child, #search-bar {
   margin-left: 0;
 }
 
@@ -70,6 +69,10 @@ header {
 
 .navbar i {
   margin: 0 4px;
+}
+
+#logo {
+  font-size: 24px;
 }
 
 #navbar-center {
@@ -82,25 +85,29 @@ header {
 }
 
 #search-bar {
-  margin-left: 0;
-}
-
-#search-bar > input {
   padding: 4px;
   border: none;
   color: #EFEFEF;
   background-color: #3F5765;
 }
 
+/**** Containers ****/
+.main-container {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 /***Main section***/
 main {
-  padding: 16px 5%;
+  padding-top: 16px;
+  padding-bottom: 16px;
   background: rgba(239,239,239, 0.2);
   color: #2B3A42;
 }
 
 .module {
-  padding: 32px 5%;
+  padding-top: 32px;
+  padding-bottom: 32px;
   background: #EFEFEF;
 }
 
