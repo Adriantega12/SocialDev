@@ -8,12 +8,16 @@
 }
 
 .author {
+  /*height: 128px;*/
   display: flex;
   justify-content: center;
 }
 
 .author-description {
-
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  /*align-content: space-between;*/
 }
 
 .score {
