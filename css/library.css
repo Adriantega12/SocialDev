@@ -35,24 +35,13 @@ header {
   background: #2B3A42;
 }
 
-nav {
-  height: 48px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-
 .navbar {
   color: #EFEFEF;
   list-style-type: none;
   display: flex;
+  align-items: center;
 }
 
-.navbar div {
-  margin: 0;
-  padding: 0;
-  /*display: inline-block;*/
-}
 
 .navbar a,
 .navbar a:visited {
@@ -74,10 +63,6 @@ nav {
   margin: 0 4px;
 }
 
-#navbar-left {
-
-}
-
 #navbar-center {
   margin: 0 auto;
   display: flex;
@@ -85,11 +70,6 @@ nav {
 
 #navbar-center > li {
   margin: 0 16px;
-}
-
-#navbar-right {
-  margin-left: auto;
-  display: flex;
 }
 
 #search-bar {
