@@ -8,16 +8,18 @@
 }
 
 .author {
-  /*height: 128px;*/
   display: flex;
   justify-content: center;
+}
+
+.author > img {
+  margin-right: 1%;
 }
 
 .author-description {
   display: flex;
   flex-direction: column;
   align-self: center;
-  /*align-content: space-between;*/
 }
 
 .score {
@@ -25,7 +27,23 @@
 }
 
 .comment-list {
+  margin-left: 5%;
+  margin-right: 7.5%;
   list-style-type: none;
+}
+
+.comment {
+  margin-bottom: 16px;
+  text-align: justify;
+  display: flex;
+}
+
+.comment > img {
+  margin-right: 2%;
+}
+
+.comment-content > h3 {
+  margin-bottom: 4px;
 }
 
 .respond-form {
@@ -37,7 +55,3 @@
   display: block;
 }
 
-.comment {
-  text-align: justify;
-  display: flex;
-}

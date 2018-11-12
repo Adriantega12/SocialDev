@@ -97,18 +97,18 @@ header {
   padding-right: 5%;
 }
 
+.module {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background: #EFEFEF;
+}
+
 /***Main section***/
 main {
   padding-top: 16px;
   padding-bottom: 16px;
   background: rgba(239,239,239, 0.2);
   color: #2B3A42;
-}
-
-.module {
-  padding-top: 32px;
-  padding-bottom: 32px;
-  background: #EFEFEF;
 }
 
 /***Stylings***/
