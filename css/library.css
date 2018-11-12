@@ -36,12 +36,13 @@ header {
 }
 
 .navbar {
+  height: 48px;
+  padding: 0 5%;
   color: #EFEFEF;
   list-style-type: none;
   display: flex;
   align-items: center;
 }
-
 
 .navbar a,
 .navbar a:visited {
@@ -57,6 +58,14 @@ header {
 
 .navbar li {
   margin: 0 8px;
+}
+
+.navbar li:first-child {
+  margin-left: 0;
+}
+
+.navbar li:last-child {
+  margin-right: 0;
 }
 
 .navbar i {
@@ -76,6 +85,13 @@ header {
   margin-left: 0;
 }
 
+#search-bar > input {
+  padding: 4px;
+  border: none;
+  color: #EFEFEF;
+  background-color: #3F5765;
+}
+
 /***Main section***/
 main {
   padding: 16px 5%;
@@ -84,7 +100,7 @@ main {
 }
 
 .module {
-  padding: 32px 32px;
+  padding: 32px 5%;
   background: #EFEFEF;
 }
 
@@ -103,7 +119,6 @@ main {
 
 /***Avatar thumbnail usage***/
 .avatar {
-  /*margin: 16px;*/
   border-radius: 100%;
 }
 
