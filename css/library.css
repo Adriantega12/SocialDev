@@ -22,7 +22,8 @@ header, section, footer, aside, nav, main, article, figure {
 }
 
 body {
-  background: #3F5765;
+  /*background: #3F5765;*/
+  background: #EFEFEF;
 }
 
 /********** Everything related to the navbar **********/
@@ -71,8 +72,12 @@ header {
   margin: 0 4px;
 }
 
-#logo {
+#logo > a {
   font-size: 24px;
+}
+
+#menu-bar {
+  display: none;
 }
 
 #navbar-center {
@@ -93,15 +98,15 @@ header {
 
 /**** Containers ****/
 .main-container {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
 }
 
 .module {
   padding-top: 32px;
   padding-bottom: 32px;
   background: #EFEFEF;
-}
+}*/
 
 /***Main section***/
 main {
@@ -143,3 +148,36 @@ main {
   width: 64px;
   height: 64px;
 }
+
+@media screen and (max-width: 780px) {
+  #menu-bar {
+    display: block;
+  }
+
+  #logo {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #navbar-center {
+    display: none;
+  }
+
+  #search-icon {
+    display: none;
+  }
+
+  #search-bar {
+    display: none;
+  }
+
+  #messages {
+    display: none;
+  }
+}
+
+/*@media screen and (min-width: 720px) {
+  #menu-bar {
+    display: none;
+  }
+}*/
