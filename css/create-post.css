@@ -1,25 +1,52 @@
 label.section-title {
-  display: inline-block;
+  display: block;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
-input[type="text"], textarea {
-  width: 100%;
-  padding: 0.8em;
+.post-form {
+  display: flex;
+  flex-direction: column;
+}
 
+.post-form input[type="text"], .post-form textarea {
+  width: calc(100% - 2*0.8em);
+  padding: 0.5em 0.8em;
   border: none;
-
   margin-bottom: 16px;
   display: block;
 }
 
-input[type="text"] {
+.post-form input[type="text"] {
   border-radius: 5px;
 }
 
-textarea {
+.post-form textarea {
   height: 25em;
   resize: none;
   border-radius: 1.5%;
+}
+
+.post-submission {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-submission .btn:first-of-type {
+  margin-right: 1.5%;
+}
+
+@media screen and (max-width: 780px) {
+  .post-submission {
+    flex-direction: column;
+  }
+
+  .post-submission .btn {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .post-submission .btn:first-of-type {
+    margin-right: 0;
+  }
 }

@@ -39,12 +39,14 @@
     <section class="module main-container">
       <h1 class="title main-title">Create a new post for SocialDev</h1>
       <form class="post-form">
-        <label class="title section-title" for="post-title">Title:</label>
-        <input id="post-title" type="text" name="" placeholder="Title">
+        <label class="title section-title" for="post-title">Post title:</label>
+        <input id="post-title" type="text" name="" placeholder="Post title">
         <label class="title section-title" for="post-content">Content:</label>
         <textarea id="post-content" placeholder="Write your post content here..."></textarea>
-        <button type="submit">Publish</button>
-        <button>Cancel</button>
+        <div class="post-submission">
+          <button class="btn btn-submit" type="submit">Publish</button>
+          <button class="btn btn-cancel">Cancel</button>
+        </div>
       </form>
     </section>
   </main>
