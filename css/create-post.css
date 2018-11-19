@@ -1,0 +1,25 @@
+label.section-title {
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 0.8em;
+
+  border: none;
+
+  margin-bottom: 16px;
+  display: block;
+}
+
+input[type="text"] {
+  border-radius: 5px;
+}
+
+textarea {
+  height: 25em;
+  resize: none;
+  border-radius: 1.5%;
+}
