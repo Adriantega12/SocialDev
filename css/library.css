@@ -22,7 +22,6 @@ header, section, footer, aside, nav, main, article, figure {
 }
 
 body {
-  /*background: #3F5765;*/
   background: #EFEFEF;
 }
 
@@ -151,6 +150,11 @@ main {
 }
 
 @media screen and (max-width: 780px) {
+  .main-container {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
   #menu-bar {
     display: block;
   }
