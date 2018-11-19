@@ -98,15 +98,16 @@ header {
 
 /**** Containers ****/
 .main-container {
-  padding-left: 2.5%;
-  padding-right: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .module {
   padding-top: 32px;
   padding-bottom: 32px;
   background: #EFEFEF;
-}*/
+  border-bottom: 2px solid rgb(200, 200 , 200, 0.6);
+}
 
 /***Main section***/
 main {
@@ -159,25 +160,7 @@ main {
     margin-left: auto;
   }
 
-  #navbar-center {
-    display: none;
-  }
-
-  #search-icon {
-    display: none;
-  }
-
-  #search-bar {
-    display: none;
-  }
-
-  #messages {
+  #navbar-center, #search-icon, #search-bar, #messages {
     display: none;
   }
 }
-
-/*@media screen and (min-width: 720px) {
-  #menu-bar {
-    display: none;
-  }
-}*/
