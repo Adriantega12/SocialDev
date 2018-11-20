@@ -31,7 +31,7 @@ The navbar will almost always be reused across the page.
 So it makes sense to put all the CSS related to the nav
 in the library itself.
  */
-header {
+header.main-container {
   background: #2B3A42;
 }
 
@@ -195,7 +195,7 @@ a, a:link, a:visited, a:hover, a:active {
 /**
  * Post list
  */
-.post-list {
+.list {
   padding: 0 5%;
   list-style-type: none;
   display: flex;
@@ -208,7 +208,7 @@ a, a:link, a:visited, a:hover, a:active {
 /**
  * Post preview
  */
-.post-preview {
+.preview {
   display: flex;
   padding-left: 2%;
   padding-right: 1%;
@@ -217,11 +217,11 @@ a, a:link, a:visited, a:hover, a:active {
   border-bottom: 2px solid rgb(200, 200 , 200, 0.4);
 }
 
-li:last-child > .post-preview {
+li:last-child > .preview {
   border-bottom: none;
 }
 
-.post-preview img {
+.preview img {
   height: 152px;
   width: 152px;
   object-fit: cover;
@@ -236,15 +236,15 @@ li:last-child > .post-preview {
   font-size: 21px;
 }
 
-.post-preview-content > .post-excerpt, .post-author, .post-date {
+.post-preview-content > .post-excerpt, .post-author, .date {
   margin-bottom: 8px;
 }
 
-.post-excerpt, .post-date {
+.post-excerpt, .date {
   opacity: 0.8;
 }
 
-.post-date, .post-score > .fas, .far {
+.date, .post-score > .fas, .far {
   font-size: 14px;
 }
 
@@ -277,12 +277,12 @@ li:last-child > .post-preview {
 }
 
 @media screen and (max-width: 750px) {
-  .post-preview {
+  .preview {
     padding-right: 2%;
     flex-direction: column;
   }
 
-  .post-preview img {
+  .preview img {
     height: 240px;
     width: 240px;
     align-self: center;
