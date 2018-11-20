@@ -1,0 +1,31 @@
+span.section-title {
+  font-size: 1em;
+  color: gray;
+  opacity: 1;
+}
+
+.pages-list {
+  margin: 16px 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.pages-list > li {
+  padding: 0 1%;
+  /*color: rgba(43, 58, 66, 0.5);*/
+  opacity: 0.5;
+  border-right: 1px solid rgb(200, 200, 200, 0.6);
+}
+
+.pages-list > li:last-of-type {
+  border: none;
+}
+
+.pages-list > li:hover {
+  cursor: pointer;
+}
+
+.pages-list > li.current-page {
+  opacity: 1;
+}

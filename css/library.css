@@ -275,3 +275,20 @@ li:last-child > .post-preview {
     display: none;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .post-preview {
+    padding-right: 2%;
+    flex-direction: column;
+  }
+
+  .post-preview img {
+    height: 240px;
+    width: 240px;
+    align-self: center;
+  }
+
+  .post-preview-content {
+    margin-left: 0;
+  }
+}
