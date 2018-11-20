@@ -101,59 +101,6 @@
   right: 2%;
 }
 
-.post-list {
-  padding: 0 5%;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.post-preview {
-  display: flex;
-  padding-left: 2%;
-  padding-right: 1%;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
-  border-bottom: 2px solid rgb(200, 200 , 200, 0.4);
-}
-
-li:last-child > .post-preview {
-  border-bottom: none;
-}
-
-.post-preview img {
-  height: 152px;
-  width: 152px;
-  object-fit: cover;
-  align-self: center;
-}
-
-.post-preview-content {
-  margin-left: 2%;
-}
-
-.post-preview-content h3 {
-  font-size: 21px;
-}
-
-.post-preview-content > .post-excerpt, .post-author, .post-date {
-  margin-bottom: 8px;
-}
-
-.post-excerpt, .post-date {
-  opacity: 0.8;
-}
-
-.post-date, .post-score > .fas, .far {
-  font-size: 14px;
-}
-
-.post-author {
-  font-weight: 500;
-}
-
 @media screen and (max-width: 750px) {
   .carousel {
     padding-bottom: 56.25%;
