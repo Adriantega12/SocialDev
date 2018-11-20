@@ -196,6 +196,19 @@ a, a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
+/**Inputs**/
+/*.text-input input[type="text"], .text-input textarea {
+  width: calc(100% - 2*0.8em);
+  padding: 0.5em 0.8em;
+  border: none;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.text-input input[type="text"] {
+  border-radius: 5px;
+}*/
+
 /*Specific modules for reusable cases*/
 
 /**
