@@ -149,6 +149,11 @@ main {
   height: 64px;
 }
 
+.avatar-xlg {
+  width: 152px;
+  height: 152px;
+}
+
 /***Buttons***/
 .btn {
   font-size: 1.2em;
@@ -285,6 +290,7 @@ li:last-child > .preview {
 
 @media screen and (max-width: 750px) {
   .preview {
+    padding-top: 8px;
     padding-right: 2%;
     flex-direction: column;
   }
