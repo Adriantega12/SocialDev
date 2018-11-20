@@ -8,17 +8,20 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/library.css">
-  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/sign-form.css">
 </head>
 <body>
 
-  <main class="landing">
-    <h1>{SocialDev}</h1>
-    <h2>Social network for developers</h2>
-    <div>
-      <a href="sign-up.html"><button class="btn btn-submit">Sign Up</button></a>
-      <a href="sign-in.html"><button class="btn btn-cancel">Sign In</button></a>
-    </div>
+  <main class="main-container">
+    <section class="main-container sign-form">
+      <h1 class="title main-title">Sign In</h1>
+      <form>
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <a href="network-feed.html"><button class="btn btn-submit" type="button">Sign In</button></a>
+        <a href="index.html"><button class="btn btn-cancel" type="button">Cancel</button></a>
+      </form>
+    </section>
   </main>
 
 </body>
