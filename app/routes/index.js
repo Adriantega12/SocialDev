@@ -4,7 +4,7 @@ const router = Router();
 
 // Test
 router.get('/', (req, res) => {
-  res.send('Principal');
+  res.sendFile('../index.html');
 });
 
 module.exports = router;
