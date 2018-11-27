@@ -2,11 +2,14 @@
   "name": "socialdev",
   "version": "1.0.0",
   "description": "Frontend project for the SocialDev platform",
-  "main": "app.js",
+  "main": "app/app.js",
   "dependencies": {
-    "babel-cli": "^6.26.0"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "dotenv": "^6.1.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -16,6 +19,7 @@
     "mustache": "^3.0.1"
   },
   "scripts": {
+    "start": "node app/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
