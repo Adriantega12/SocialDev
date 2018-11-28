@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SocialDev</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/library.css">
+  <script id="cssLink" type="text/javascript">
+    <link rel="stylesheet" type="text/css" href="../css/{{fileName}}.css">
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar reusable code -->
+  <header class="main-container">
+    <nav>
+      <ul class="navbar main-container">
+        <li id="menu-bar"><a href="#"><i class="fas fa-bars"></i></a></li>
+        <li id="logo"><a href="index.html">{SD}</a></li>
+        <div id="navbar-center">
+          <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+          <li><a href="network-feed.html"><i class="fas fa-globe"></i>Network</a></li>
+        </div>
+        <li id="search-icon"><i class="fas fa-search"></i></li>
+        <li><input id="search-bar" type="text" name="search-input" placeholder="Search"></li>
+        <li id="messages"><a href="messages.html"><i class="fas fa-envelope"></i></a></li>
+        <li>
+          <a href="profile.html">
+            <img class="avatar avatar-sm" src="https://via.placeholder.com/150">
+          </a>
+        </li>
+        <li><a href="create-post.html"><i class="fas fa-plus"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <section class="module main-container">
+      <article class="blog-post">
+        <h1 class="title main-title">POST TITLE</h1>
+        <p>Officia proident duis cupidatat nostrud sunt pariatur duis qui labore est ea exercitation laboris est adipisicing in laborum mollit cupidatat eu laboris dolor quis.</p>
+        <p>Eu sed qui fugiat mollit veniam amet magna et anim et occaecat anim officia anim ex deserunt in consectetur eiusmod id veniam deserunt amet excepteur duis esse irure aliqua enim eu aliquip adipisicing magna quis excepteur qui sit cillum in adipisicing pariatur enim ut ut eu dolor occaecat duis sed laborum labore ut eiusmod irure ut eu exercitation consequat sit aliqua ut ex consequat do amet aliquip cillum consequat amet nostrud ea amet sunt qui labore ut adipisicing tempor dolore voluptate nulla fugiat labore eu nisi do sit deserunt dolor do consequat ut non labore officia deserunt est occaecat exercitation velit exercitation officia dolor labore commodo enim labore cillum adipisicing magna minim irure consequat esse dolore et commodo reprehenderit proident magna eiusmod occaecat minim quis aute in sunt ea cillum fugiat nisi nisi aute incididunt ut ea cillum mollit consequat adipisicing deserunt aliqua eiusmod commodo aliqua exercitation exercitation duis minim et dolor.</p>
+        <p>Anim officia voluptate sed labore proident dolor duis quis eiusmod sit id sit in pariatur sunt aute dolore sint commodo aute in quis velit dolore et deserunt adipisicing aliqua culpa. Ex fugiat nostrud enim cillum dolore officia incididunt reprehenderit ad in amet adipisicing consequat magna exercitation magna ut laboris ex irure pariatur sunt aliqua occaecat cupidatat tempor quis sed eiusmod fugiat exercitation et velit aute exercitation consequat in nisi.</p>
+        <p>Lorem ipsum in aliqua qui ad tempor esse esse minim adipisicing consectetur amet dolore elit eiusmod aliquip consequat et aute in pariatur minim adipisicing mollit consectetur irure reprehenderit pariatur do aliqua officia dolore irure excepteur est non ut consectetur in amet dolor tempor dolore mollit mollit nostrud sunt dolore fugiat duis sint aliquip velit eiusmod ullamco reprehenderit non irure ad nostrud sed irure dolor laboris laboris esse officia pariatur nostrud excepteur labore anim sint eu reprehenderit ut et do labore esse quis irure ut incididunt commodo aute id sit anim cillum labore duis et aute adipisicing fugiat sit sit ex dolore amet non nulla ut velit mollit excepteur nostrud cillum proident voluptate ea sunt aute et anim ullamco duis et mollit non reprehenderit ut mollit minim in officia qui dolor quis fugiat ex minim in excepteur fugiat deserunt velit dolor dolor eiusmod est officia occaecat veniam sint ex ut aute ex ullamco non consectetur deserunt officia qui dolor aute eu magna fugiat proident ullamco in eiusmod nostrud proident aliquip sed eiusmod et laborum consectetur do occaecat dolore ea commodo sed quis dolor ad ex culpa esse non ex aliquip qui duis consectetur tempor aute tempor deserunt ullamco cupidatat eiusmod dolor est ullamco ut est incididunt incididunt veniam excepteur deserunt est dolore veniam velit cillum laborum do reprehenderit est dolore cillum amet magna esse velit nulla ea officia esse tempor id anim ad nostrud deserunt anim amet id aliqua.</p>
+        <p>Lorem ipsum deserunt nostrud cupidatat ex eiusmod non irure adipisicing proident nulla do amet consectetur laborum et amet in duis labore duis fugiat voluptate id ut officia enim non.</p>
+      </article>
+
+      <!-- Author description -->
+      <article class="module author">
+        <img class="avatar avatar-lg" src="assets/images/avatar.png">
+        <div class="author-description">
+          <h3>Author name</h3>
+          <p>Level: <span>10</span></p> <!-- TBD -->
+        </div>
+      </article>
+
+      <!-- Rate article -->
+      <section class="module">
+        <h2 class="title section-title">Rate this article</h2>
+        <section class="score">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </section>
+      </section>
+
+      <section class="module comment-section">
+
+        <!-- "Leave a comment" section -->
+        <section class="module">
+          <h2 class="title section-title">Leave a comment</h2>
+          <section class="respond-form">
+            <img class="avatar avatar-sm" src="assets/images/avatar.png">
+            <form>
+              <textarea></textarea>
+              <button class="btn btn-submit" type="submit">Reply</button>
+            </form>
+          </section>
+        </section>
+
+        <!-- Comment list starts here -->
+        <h2 class="title section-title">Comments</h2>
+        <ol class="comment-list">
+          <li>
+            <article class="comment">
+              <img class="avatar avatar-md" src="assets/images/avatar.png">
+              <div class="comment-content">
+                <h3>User name</h3>
+                <p>Labore consequat consectetur qui amet excepteur velit non et consectetur adipisicing enim laborum dolore dolore amet excepteur incididunt qui.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="comment">
+              <img class="avatar avatar-md" src="assets/images/avatar.png">
+              <div class="comment-content">
+                <h3>User name</h3>
+                <p>Dolor laboris irure commodo incididunt dolore adipisicing in ut labore esse ullamco minim culpa commodo voluptate anim ut veniam amet ut qui mollit consequat esse occaecat in non irure qui excepteur nisi.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="comment">
+              <img class="avatar avatar-md" src="assets/images/avatar.png">
+              <div class="comment-content">
+                <h3>User name</h3>
+                <p>Irure amet fugiat exercitation sunt cillum minim laborum pariatur dolor ad excepteur nulla elit ad in aliqua reprehenderit tempor pariatur dolore deserunt est ut exercitation dolore velit nisi ullamco fugiat quis enim labore dolore commodo nostrud sed in aliqua nisi nisi dolore ut eu ullamco ex in do voluptate nisi sunt cillum magna irure velit excepteur ad id et pariatur reprehenderit nostrud veniam commodo reprehenderit reprehenderit in nulla dolore esse sunt dolore incididunt pariatur in laborum in aliquip proident laborum aliqua laboris duis commodo labore laboris ad in sit reprehenderit consectetur ea excepteur dolor consectetur nulla ut elit est irure quis elit quis cupidatat elit exercitation ut aliquip officia nisi do veniam incididunt qui dolor deserunt qui amet esse irure do reprehenderit anim dolor eu esse dolore aute incididunt aliquip non est velit et elit magna minim dolore in pariatur sit non cillum eiusmod magna sit et proident ex in duis nostrud officia.</p>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </section>
+    </section>
+  </main>
+
+</body>
+</html>
