@@ -1,11 +1,12 @@
 {{> ../partials/header}}
+  <link id="mainCSS"rel="stylesheet" type="text/css" href="../css/search.css">
+{{> ../partials/navbar}}
 
   <main class="main-container">
     <section class="module main-container">
       <h2 class="title section-title">Results for: <span class="section-title">post title</span></h2>
-      <ol class="list">
-        {{> ../partials/post-li}}
-      </ol>
+      <ol id="post-list" class="list"></ol>
+      {{> ../partials/post-list}}
     </section>
     <ol class="pages-list">
       <li><a href="#"><<</a></li>
@@ -20,4 +21,5 @@
     </ol>
   </main>
 
+  <script type="text/javascript" src="../js/search.js"></script>
 {{> ../partials/footer}}
