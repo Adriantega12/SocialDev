@@ -8,7 +8,7 @@ router.get('/', PostsController.getAll);
 
 // CREATE Post view
 router.get('/new', (req, res) => {
-
+  res.render('newPost');
 });
 
 // NEW Post
