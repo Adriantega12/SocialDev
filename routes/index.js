@@ -4,7 +4,12 @@ const router = Router();
 
 // Test
 router.get('/', (req, res) => {
-  res.sendFile('../index.html');
+  res.render('search', {
+    posts: [ {
+      title: 'Title',
+    },
+    ],
+  });
 });
 
 module.exports = router;
