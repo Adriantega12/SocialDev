@@ -1,4 +1,39 @@
-{{> ../partials/header}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SocialDev</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/library.css">
+  <link rel="stylesheet" type="text/css" href="css/messages.css">
+</head>
+<body>
+
+  <!-- Navbar reusable code -->
+  <header class="main-container">
+    <nav>
+      <ul class="navbar main-container">
+        <li id="menu-bar"><a href="#"><i class="fas fa-bars"></i></a></li>
+        <li id="logo"><a href="index.html">{SD}</a></li>
+        <div id="navbar-center">
+          <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+          <li><a href="network-feed.html"><i class="fas fa-globe"></i>Network</a></li>
+        </div>
+        <li id="search-icon"><i class="fas fa-search"></i></li>
+        <li><input id="search-bar" type="text" name="search-input" placeholder="Search"></li>
+        <li id="messages"><a href="messages.html"><i class="fas fa-envelope"></i></a></li>
+        <li>
+          <a href="profile.html">
+            <img class="avatar avatar-sm" src="https://via.placeholder.com/150">
+          </a>
+        </li>
+        <li><a href="create-post.html"><i class="fas fa-plus"></i></a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="main-container">
     <section class="module main-container">
@@ -60,4 +95,5 @@
     </section>
   </main>
 
-{{> ../partials/footer}}
+</body>
+</html>
