@@ -1,11 +1,22 @@
+const fetch = require('node-fetch');
+
 class API {
   constructor() {
     this.host = process.env.API_HOST;
   }
 
   async get(objectName, id) {
-    const fetchPromise = fetch(`${this.host}/${objectName}/${id}`);
-    return fetchPromise;
+    let json;
+
+    try {
+      const fetchPromise = await fetch(`${this.host}/${objectName}/${id}`, { method: 'get' });
+      const jsonPromise = await fetchPromise.json();
+      json = await jsonPromise;
+    } catch (error) {
+      return error;
+    }
+
+    return json;
   }
 }
 

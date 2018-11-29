@@ -6,7 +6,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mustache-express": "^1.2.8"
+    "mustache-express": "^1.2.8",
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",

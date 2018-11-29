@@ -14,8 +14,15 @@ class PostsController {
   }
 
   static async get(req, res, next) {
-    console.log(Post.get(req.params.postId));
-    res.send('Kay');
+    const post = await Post.get(req.params.postId);
+    console.log(post);
+    res.render('post', post, (error, html) => {
+      if (error) {
+        next(error);
+      }
+
+      res.send(html);
+    });
   }
 
   static async insert(req, res, next) {
