@@ -5,9 +5,7 @@ const babel = require('gulp-babel');
 // Gulp-Mustache task
 gulp.task('mustache', () => {
   gulp.src('./app/templates/**/*.mustache')
-    .pipe(mustache({
-      fileName:'{{fileName}}',
-    }, {
+    .pipe(mustache({}, {
       extension: '.html',
     }, {
       header: './app/partials/header.mustache',

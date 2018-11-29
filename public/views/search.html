@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/library.css">
   <script id="cssLink" type="x-tmpl-mustache">
-    <link rel="stylesheet" type="text/css" href="../css/{{=<% %>=}}{{cssFile}}<%={{ }}=%>.css">
+    <link rel="stylesheet" type="text/css" href="../css/{{cssFile}}.css">
   </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
 </head>
@@ -37,3 +37,53 @@
       </ul>
     </nav>
   </header>
+
+  <main class="main-container">
+    <section class="module main-container">
+      <h2 class="title section-title">Results for: <span class="section-title">post title</span></h2>
+      <ol class="list">
+<script id="post-li" type="x-tmpl-mustache">
+  {{#posts}}
+  <li>
+    <article class="preview">
+      <img src="{{post.path}}">
+      <div class="post-preview-content">
+        <a href="./posts/{{post.id}}"><h3 class="title">{{post.title}}</h3></a>
+        <article class="post-excerpt">
+          <p>{{post.content}}</p>
+        </article>
+        <article class="post-author">
+          {{post.authorName}}
+        </article>
+        <section class="date">
+          {{post.date}}
+        </section>
+        <section class="post-score">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </section>
+      </div>
+    </article>
+  </li>
+  {{/posts}}
+</script>
+      </ol>
+    </section>
+    <ol class="pages-list">
+      <li><a href="#"><<</a></li>
+      <li><a href="#"><</a></li>
+      <li class="current-page"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">></a></li>
+      <li><a href="#">>></a></li>
+    </ol>
+  </main>
+
+</body>
+</html>
