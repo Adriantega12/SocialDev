@@ -1,0 +1,60 @@
+{{> ./partials/header}}
+  <link id="mainCSS"rel="stylesheet" type="text/css" href="../css/post.css">
+{{> ./partials/navbar}}
+
+  <main class="main-container">
+    <section class="module main-container">
+      <article class="blog-post">
+        <h1 class="title main-title">{{title}}</h1>
+        {{text}}
+      </article>
+
+      <!-- Author description -->
+      <article class="module author">
+        <img class="avatar avatar-lg" src="assets/images/avatar.png">
+        <div class="author-description">
+          <h3>{{author}}</h3>
+          <p>Level: <span>10</span></p> <!-- TBD -->
+        </div>
+      </article>
+
+      <!-- Rate article -->
+      <section class="module">
+        <h2 class="title section-title">Rate this article</h2>
+        <section class="score">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </section>
+      </section>
+
+      <section class="module comment-section">
+
+        <!-- "Leave a comment" section -->
+        <section class="module">
+          <h2 class="title section-title">Leave a comment</h2>
+          <section class="respond-form">
+            <img class="avatar avatar-sm" src="assets/images/avatar.png">
+            <form>
+              <textarea></textarea>
+              <button class="btn btn-submit" type="submit">Reply</button>
+            </form>
+          </section>
+        </section>
+
+        <!-- Comment list starts here -->
+        <h2 class="title section-title">Comments</h2>
+        <ol class="comment-list">
+        {{#comments}}
+          <li>
+          {{> ./partials/comment-list-li}}
+          </li>
+        {{/comments}}
+        </ol>
+      </section>
+    </section>
+  </main>
+
+{{> ./partials/footer}}

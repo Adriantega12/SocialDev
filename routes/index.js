@@ -4,9 +4,15 @@ const router = Router();
 
 // Test
 router.get('/', (req, res) => {
-  res.render('search', {
-    posts: [ {
-      title: 'Title',
+  res.render('post', {
+    comments: [ {
+      author: 'Hey',
+    },
+    {
+      author: 'You',
+    },
+    {
+      author: 'You',
     },
     ],
   });
