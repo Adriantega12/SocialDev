@@ -6,7 +6,11 @@
     <section class="module main-container">
       <h2 class="title section-title">Results for: <span class="section-title">post title</span></h2>
       <ol id="post-list" class="list">
-        {{> ./partials/post-list}}
+      {{#posts}}
+        <li>
+        {{> ./partials/post-list-li}}
+        </li>
+      {{/posts}}
       </ol>
     </section>
     <ol class="pages-list">
@@ -21,6 +25,4 @@
       <li><a href="#">>></a></li>
     </ol>
   </main>
-
-  <!-- <script type="text/javascript" src="../js/search.js"></script> -->
 {{> ./partials/footer}}
