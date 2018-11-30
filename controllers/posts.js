@@ -1,21 +1,13 @@
 const { Post } = require('../models');
 
 class PostsController {
-  constructor() {
-    /*this.getAll = this.getAll.bind(this);
-    this.get = this.get.bind(this);
-    this.insert = this.insert.bind(this);
-    this.update = this.update.bind(this);
-    this.delete = this.delete.bind(this);*/
-  }
-
   static async getAll(req, res, next) {
 
   }
 
   static async get(req, res, next) {
     const post = await Post.get(req.params.postId);
-    res.render('post', post, (error, html) => {
+    res.render('post', { ...post, isAuthor: true }, (error, html) => {
       if (error) {
         next(error);
       } else {
@@ -29,11 +21,10 @@ class PostsController {
 
     try {
       newPost = await Post.insert(req.body);
+      res.redirect(`posts/${newPost.id}`);
     } catch (error) {
       next(error);
     }
-
-    res.redirect(`posts/${newPost.id}`);
   }
 
   static async update(req, res, next) {
@@ -41,7 +32,20 @@ class PostsController {
   }
 
   static async delete(req, res, next) {
+    let deleted;
 
+    try {
+      deleted = await Post.delete(req.params.postId);
+    } catch (error) {
+      next(error);
+    }
+
+    // Some kind of redirect happens after this
+    if (deleted) {
+      res.redirect();
+    } else {
+
+    }
   }
 }
 

@@ -18,6 +18,15 @@
         </div>
       </article>
 
+      {{#isAuthor}}
+      <section class="module">
+        <a class="btn btn-secondary" href="./posts/{{id}}/edit">Edit</a>
+        <form action="/posts/{{id}}" method="DELETE">
+          <button class="btn" type="submit">Delete</button>
+        </form>
+      </section>
+      {{/isAuthor}}
+
       <!-- Rate article -->
       <section class="module">
         <h2 class="title section-title">Rate this article</h2>
