@@ -17,6 +17,9 @@ router.post('/', PostsController.insert);
 // SHOW Post
 router.get('/:postId', PostsController.get);
 
+// EDIT Post view
+router.get('/:postId/edit', PostsController.edit);
+
 // UPDATE Post
 router.put('/:postId', PostsController.update);
 

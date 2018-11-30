@@ -4,12 +4,12 @@
 
 <main class="main-container">
   <section class="module main-container">
-    <h1 class="title main-title">Create a new post for SocialDev</h1>
-    <form class="post-form" action="/posts" method="POST">
+    <h1 class="title main-title">Edit {{title}}</h1>
+    <form class="post-form" action="/posts" method="UPDATE">
       <label class="title section-title" for="post-title">Post title:</label>
-      <input class="text-input" id="post-title" type="text" name="title" placeholder="Post title">
+      <input class="text-input" id="post-title" type="text" name="post[title]" placeholder="Post title" value="{{title}}">
       <label class="title section-title" for="post-content">Content:</label>
-      <textarea class="text-input" id="post-content" name="text" placeholder="Write your post content here..."></textarea>
+      <textarea class="text-input" id="post-content" name="post[text]" placeholder="Write your post content here...">{{text}}</textarea>
       <div class="post-submission">
         <button class="btn btn-primary" type="submit">Publish</button>
         <button class="btn btn-secondary">Cancel</button>

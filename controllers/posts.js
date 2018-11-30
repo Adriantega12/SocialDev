@@ -6,8 +6,15 @@ class PostsController {
   }
 
   static async get(req, res, next) {
-    const post = await Post.get(req.params.postId);
-    res.render('posts/show', { ...post, isAuthor: true }, (error, html) => {
+    let post;
+
+    try {
+      post = await Post.get(req.params.postId);
+    } catch (error) {
+      next(error);
+    }
+
+    res.render('posts/show', { ...post, isAuthor: false }, (error, html) => {
       if (error) {
         next(error);
       } else {
@@ -22,6 +29,17 @@ class PostsController {
     try {
       newPost = await Post.insert(req.body);
       res.redirect(`posts/${newPost.id}`);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async edit(req, res, next) {
+    let post;
+
+    try {
+      post = await Post.get(req.params.postId);
+      res.render('posts/edit', post);
     } catch (error) {
       next(error);
     }
