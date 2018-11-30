@@ -1,10 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
 const router = require('./routes');
 
 const app = express();
+
+// Middleware loading
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Template rendering setup
 app.engine('mustache', mustacheExpress());

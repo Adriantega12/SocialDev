@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const { URLSearchParams } = require('url');
 
 class API {
   constructor() {
@@ -10,6 +11,26 @@ class API {
 
     try {
       const fetchPromise = await fetch(`${this.host}/${objectName}/${id}`, { method: 'get' });
+      const jsonPromise = await fetchPromise.json();
+      json = await jsonPromise;
+    } catch (error) {
+      return error;
+    }
+
+    return json;
+  }
+
+  async insert(objectName, body) {
+    let json;
+
+    try {
+      const fetchPromise = await fetch(`${this.host}/${objectName}`, {
+        method: 'post',
+        body: new URLSearchParams(body),
+        headers: {
+          token: '$2b$10$cVkJa3Nr1fx1bpaq4zn1.OyLxgVt3dPtuDjih5rzEJxMOMJLq.QbS', // Do something about this
+        },
+      });
       const jsonPromise = await fetchPromise.json();
       json = await jsonPromise;
     } catch (error) {

@@ -25,7 +25,15 @@ class PostsController {
   }
 
   static async insert(req, res, next) {
+    let newPost;
 
+    try {
+      newPost = await Post.insert(req.body);
+    } catch (error) {
+      next(error);
+    }
+
+    res.redirect(`posts/${newPost.id}`);
   }
 
   static async update(req, res, next) {

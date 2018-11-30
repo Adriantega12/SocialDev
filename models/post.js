@@ -34,7 +34,15 @@ class Post {
   }
 
   static async insert(post) {
+    let data;
 
+    try {
+      data = await api.insert('posts', post);
+    } catch (error) {
+      throw error;
+    }
+
+    return data;
   }
 
   async update(keyVals) {
