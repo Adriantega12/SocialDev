@@ -1,5 +1,5 @@
 {{> ./partials/header}}
-  <link id="mainCSS"rel="stylesheet" type="text/css" href="../css/post.css">
+  <link id="mainCSS"rel="stylesheet" type="text/css" href="/css/post.css">
 {{> ./partials/navbar}}
 
   <main class="main-container">
@@ -17,6 +17,15 @@
           <p>Level: <span>10</span></p> <!-- TBD -->
         </div>
       </article>
+
+      {{#isAuthor}}
+      <section class="module">
+        <a class="btn btn-secondary" href="./posts/{{id}}/edit">Edit</a>
+        <form action="/posts/{{id}}?_method=DELETE" method="POST">
+          <button class="btn" type="submit">Delete</button>
+        </form>
+      </section>
+      {{/isAuthor}}
 
       <!-- Rate article -->
       <section class="module">
@@ -39,7 +48,7 @@
             <img class="avatar avatar-sm" src="assets/images/avatar.png">
             <form>
               <textarea></textarea>
-              <button class="btn btn-submit" type="submit">Reply</button>
+              <button class="btn btn-primary" type="submit">Reply</button>
             </form>
           </section>
         </section>

@@ -2,20 +2,15 @@ const { Router } = require('express');
 
 const router = Router();
 
-// Test
-router.get('/', (req, res) => {
-  res.render('post', {
-    comments: [ {
-      author: 'Hey',
-    },
-    {
-      author: 'You',
-    },
-    {
-      author: 'You',
-    },
-    ],
-  });
+const usersRoutes = require('./users');
+const postsRoutes = require('./posts');
+
+router.use('/users', usersRoutes);
+
+router.use('/posts', postsRoutes);
+
+router.get('/error', (req, res) => {
+  res.render('error');
 });
 
 module.exports = router;
