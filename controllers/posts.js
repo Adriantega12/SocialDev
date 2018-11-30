@@ -7,7 +7,7 @@ class PostsController {
 
   static async get(req, res, next) {
     const post = await Post.get(req.params.postId);
-    res.render('post', { ...post, isAuthor: true }, (error, html) => {
+    res.render('posts/show', { ...post, isAuthor: true }, (error, html) => {
       if (error) {
         next(error);
       } else {
@@ -41,11 +41,11 @@ class PostsController {
     }
 
     // Some kind of redirect happens after this
-    if (deleted) {
+    /*if (deleted) {
       res.redirect();
     } else {
 
-    }
+    }*/
   }
 }
 
