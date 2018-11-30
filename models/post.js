@@ -54,7 +54,11 @@ class Post {
   }
 
   static async delete(postId) {
-
+    try {
+      await api.delete('posts', postId);
+    } catch (error) {
+      throw error;
+    }
   }
 }
 

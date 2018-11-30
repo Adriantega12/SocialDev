@@ -31,7 +31,7 @@ class API {
     const jsonPromise = await fetchPromise.json();
     const json = await jsonPromise;
 
-    if (json.status === 409 || json.status === 401) {
+    if (API.checkBadResponse(json.status)) {
       throw json;
     }
 
@@ -49,11 +49,24 @@ class API {
     const jsonPromise = await fetchPromise.json();
     const json = await jsonPromise;
 
-    if (json.status === 409 || json.status === 401) {
+    if (API.checkBadResponse(json.status)) {
       throw json;
     }
 
     return json;
+  }
+
+  async delete(route, id) {
+    const fetchPromise = await fetch(`${this.host}/${route}/${id}`, {
+      method: 'delete',
+      headers: {
+        token: '$2b$10$3hhneboOPKFqEj1sOnkSeiHdXSp7bROt55upsKX1JfFwXvgZrgu', // Do something about this
+      },
+    });
+  }
+
+  static async checkBadResponse(response) {
+    return response === 404 || response === 401 || response === 403;
   }
 }
 

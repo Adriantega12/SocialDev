@@ -14,7 +14,7 @@ class PostsController {
       next(error);
     }
 
-    res.render('posts/show', { ...post, isAuthor: false }, (error, html) => {
+    res.render('posts/show', { ...post, isAuthor: true }, (error, html) => {
       if (error) {
         next(error);
       } else {
@@ -59,20 +59,12 @@ class PostsController {
   }
 
   static async delete(req, res, next) {
-    let deleted;
-
     try {
-      deleted = await Post.delete(req.params.postId);
+      await Post.delete(req.params.postId);
+      res.redirect('/posts');
     } catch (error) {
       next(error);
     }
-
-    // Some kind of redirect happens after this
-    /*if (deleted) {
-      res.redirect();
-    } else {
-
-    }*/
   }
 }
 
