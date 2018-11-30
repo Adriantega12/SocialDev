@@ -14,7 +14,7 @@ router.get('/new', (req, res) => {
 // NEW Post
 router.post('/', PostsController.insert);
 
-// SHOW Post
+// SHOW Post view
 router.get('/:postId', PostsController.get);
 
 // EDIT Post view

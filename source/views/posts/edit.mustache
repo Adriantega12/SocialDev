@@ -5,7 +5,7 @@
 <main class="main-container">
   <section class="module main-container">
     <h1 class="title main-title">Edit {{title}}</h1>
-    <form class="post-form" action="/posts" method="PUT">
+    <form class="post-form" action="/posts/{{id}}?_method=PUT" method="POST">
       <label class="title section-title" for="post-title">Post title:</label>
       <input class="text-input" id="post-title" type="text" name="post[title]" placeholder="Post title" value="{{title}}">
       <label class="title section-title" for="post-content">Content:</label>

@@ -46,7 +46,16 @@ class PostsController {
   }
 
   static async update(req, res, next) {
-    res.send(req.body.post);
+    try {
+      const response = await Post.update({
+        id: req.params.postId,
+        ...req.body.post,
+      });
+      console.log(response);
+      res.redirect(`${req.params.postId}`);
+    } catch (error) {
+      next(error);
+    }
   }
 
   static async delete(req, res, next) {

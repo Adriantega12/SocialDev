@@ -45,8 +45,12 @@ class Post {
     return data;
   }
 
-  async update(keyVals) {
-
+  static async update(keyVals) {
+    try {
+      await api.update('posts', keyVals, keyVals.id);
+    } catch (error) {
+      throw error;
+    }
   }
 
   static async delete(postId) {

@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const mustacheExpress = require('mustache-express');
 const router = require('./routes');
 const { errorHandler } = require('./middlewares');
@@ -17,6 +18,9 @@ app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', path.join(__dirname, 'source/views'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Method Override
+app.use(methodOverride('_method'));
 
 // Load routes
 app.use(router);

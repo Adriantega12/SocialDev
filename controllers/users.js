@@ -14,7 +14,7 @@ class UsersController {
       next(error);
     }
 
-    res.render('users/show', user, (error, html) => {
+    res.render('users/show', { API_HOST: process.env.API_HOST, ...user }, (error, html) => {
       if (error) {
         next(error);
       } else {
@@ -35,11 +35,11 @@ class UsersController {
   }
 
   static async edit(req, res, next) {
-    let post;
+    let user;
 
     try {
-      post = await User.get(req.params.postId);
-      res.render('users/edit', post);
+      user = await User.get(req.params.userId);
+      res.render('users/edit', user);
     } catch (error) {
       next(error);
     }
