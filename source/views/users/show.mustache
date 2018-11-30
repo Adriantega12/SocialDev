@@ -1,0 +1,41 @@
+{{> ./partials/header}}
+  <link id="mainCSS"rel="stylesheet" type="text/css" href="/css/profile.css">
+{{> ./partials/navbar}}
+
+  <main>
+    <section>
+      <header class="profile-header">
+        <div class="user-summary">
+          <div class="user-info">
+            <img class="avatar avatar-xlg" src="{{SERVER_HOST}}/{{profilePic}}">
+            <h1 class="title main-title">{{firstName}} {{lastName}}</h1>
+            <p>Level: {{level}}</p>
+          </div>
+          <summary class="stats">
+            <h3 class="title section-title">Posts</h3>
+            <p>{{posts.length}}</p>
+            <h3 class="title section-title">Score</h3>
+            <p><i class="fas fa-star"></i>X avg</p>
+            <h3 class="title section-title">Comments</h3>
+            <p>{{comments.length}}</p>
+          </summary>
+        </div>
+        <div class="user-options">
+          <button class="btn btn-primary" type="submit">Add Friend</button>
+          <button class="btn btn-secondary" type="button">Send Message</button>
+        </div>
+      </header>
+    </section>
+
+    <main class="main-container">
+      <section class="main-container module">
+        <h2 class="title section-title">Posts</h2>
+        <ol class="list"></ol>
+        {{#posts}}
+          {{> ./partials/post-list-li}}
+        {{/posts}}
+      </section>
+    </main>
+  </main>
+
+{{> ./partials/footer}}

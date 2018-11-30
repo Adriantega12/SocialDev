@@ -131,6 +131,7 @@ main {
 
 /***Avatar thumbnail usage***/
 .avatar {
+  object-fit: cover;
   border-radius: 100%;
 }
 

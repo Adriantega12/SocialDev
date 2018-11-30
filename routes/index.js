@@ -2,7 +2,10 @@ const { Router } = require('express');
 
 const router = Router();
 
+const usersRoutes = require('./users');
 const postsRoutes = require('./posts');
+
+router.use('/users', usersRoutes);
 
 router.use('/posts', postsRoutes);
 

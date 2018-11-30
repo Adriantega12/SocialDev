@@ -1,20 +1,20 @@
-const { Post } = require('../models');
+const { User } = require('../models');
 
-class PostsController {
+class UsersController {
   static async getAll(req, res, next) {
     res.send('This was supposed to be a put');
   }
 
   static async get(req, res, next) {
-    let post;
+    let user;
 
     try {
-      post = await Post.get(req.params.postId);
+      user = await User.get(req.params.userId);
     } catch (error) {
       next(error);
     }
 
-    res.render('posts/show', { ...post, isAuthor: false }, (error, html) => {
+    res.render('users/show', user, (error, html) => {
       if (error) {
         next(error);
       } else {
@@ -24,11 +24,11 @@ class PostsController {
   }
 
   static async insert(req, res, next) {
-    let newPost;
+    let newUser;
 
     try {
-      newPost = await Post.insert(req.body);
-      res.redirect(`posts/${newPost.id}`);
+      newUser = await User.insert(req.body);
+      res.redirect(`users/${newUser.id}`);
     } catch (error) {
       next(error);
     }
@@ -38,8 +38,8 @@ class PostsController {
     let post;
 
     try {
-      post = await Post.get(req.params.postId);
-      res.render('posts/edit', post);
+      post = await User.get(req.params.postId);
+      res.render('users/edit', post);
     } catch (error) {
       next(error);
     }
@@ -53,7 +53,7 @@ class PostsController {
     let deleted;
 
     try {
-      deleted = await Post.delete(req.params.postId);
+      deleted = await User.delete(req.params.postId);
     } catch (error) {
       next(error);
     }
@@ -67,4 +67,4 @@ class PostsController {
   }
 }
 
-module.exports = PostsController;
+module.exports = UsersController;
