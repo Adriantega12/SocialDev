@@ -20,7 +20,7 @@
 
       {{#isAuthor}}
       <section class="module">
-        <a class="btn btn-secondary" href="./posts/{{id}}/edit">Edit</a>
+        <a class="btn btn-secondary" href="/posts/{{id}}/edit">Edit</a>
         <form action="/posts/{{id}}?_method=DELETE" method="POST">
           <button class="btn" type="submit">Delete</button>
         </form>

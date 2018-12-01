@@ -16,7 +16,7 @@ router.get('/new', [isLoggedIn], (req, res) => {
 router.post('/', [isLoggedIn], PostsController.insert);
 
 // SHOW Post view
-router.get('/:postId', PostsController.get);
+router.get('/:postId', [isLoggedIn], PostsController.get);
 
 // EDIT Post view
 router.get('/:postId/edit', [isLoggedIn], PostsController.edit);
