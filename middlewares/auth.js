@@ -10,7 +10,7 @@ class Auth {
         req.session.user = {
           id: response.userId,
         };
-        res.locals.API_HOST = process.env.API_HOST;
+        res.locals.API_HOST = process.env.API_HOST; // Needs to be moved to app.locals eventually
         res.locals.ppPath = response.ppPath;
         res.locals.hasSession = true;
       }
