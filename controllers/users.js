@@ -6,21 +6,16 @@ class UsersController {
   }
 
   static async get(req, res, next) {
-    let user;
-
     try {
-      user = await User.get(req.params.userId);
+      const { status, response: user } = await User.get(req.params.userId);
+      if (status === 200) {
+        res.render('users/show', { API_HOST: process.env.API_HOST, ...user });
+      } else if (status >= 400) {
+        res.redirect('/error');
+      }
     } catch (error) {
       next(error);
     }
-
-    res.render('users/show', { API_HOST: process.env.API_HOST, ...user }, (error, html) => {
-      if (error) {
-        next(error);
-      } else {
-        res.send(html);
-      }
-    });
   }
 
   static async insert(req, res, next) {
@@ -57,13 +52,6 @@ class UsersController {
     } catch (error) {
       next(error);
     }
-
-    // Some kind of redirect happens after this
-    /*if (deleted) {
-      res.redirect();
-    } else {
-
-    }*/
   }
 }
 

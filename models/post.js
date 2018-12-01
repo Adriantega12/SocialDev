@@ -33,11 +33,11 @@ class Post {
     return data;
   }
 
-  static async insert(post) {
+  static async insert(post, token) {
     let data;
 
     try {
-      data = await api.insert('posts', post);
+      data = await api.insert('posts', post, token);
     } catch (error) {
       throw error;
     }
@@ -45,17 +45,20 @@ class Post {
     return data;
   }
 
-  static async update(keyVals) {
+  static async update(keyVals, token) {
+    let data;
     try {
-      await api.update('posts', keyVals, keyVals.id);
+      data = await api.update('posts', keyVals, keyVals.id, token);
     } catch (error) {
       throw error;
     }
+
+    return data;
   }
 
-  static async delete(postId) {
+  static async delete(postId, token) {
     try {
-      await api.delete('posts', postId);
+      await api.delete('posts', postId, token);
     } catch (error) {
       throw error;
     }

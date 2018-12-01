@@ -6,40 +6,45 @@ class PostsController {
   }
 
   static async get(req, res, next) {
-    let post;
-
     try {
-      post = await Post.get(req.params.postId);
+      const { status, response: post } = await Post.get(req.params.postId);
+      if (status === 200) {
+        res.render('posts/show', {
+          isAuthor: req.session.user.id === post.userId,
+          ...post,
+        });
+      } else if (status >= 400) {
+        res.redirect('/error');
+      }
     } catch (error) {
       next(error);
     }
-
-    res.render('posts/show', { ...post, isAuthor: true }, (error, html) => {
-      if (error) {
-        next(error);
-      } else {
-        res.send(html);
-      }
-    });
   }
 
   static async insert(req, res, next) {
-    let newPost;
-
     try {
-      newPost = await Post.insert(req.body);
-      res.redirect(`posts/${newPost.id}`);
+      const { status, response: newPost } = await Post.insert(req.body, req.cookies[`${process.env.COOKIE_NAME}`]);
+      if (status === 201) {
+        res.redirect(`posts/${newPost.id}`);
+      } else if (status === 409) {
+        res.redirect('/error');
+      }
     } catch (error) {
       next(error);
     }
   }
 
   static async edit(req, res, next) {
-    let post;
-
     try {
-      post = await Post.get(req.params.postId);
-      res.render('posts/edit', post);
+      const { status, response: post } = await Post.get(req.params.postId);
+      if (req.session.user.id === post.userId) {
+        res.render('posts/edit', post);
+      } else {
+        throw next({
+          status: 403,
+          message: 'You don\'t have permission to do this.',
+        });
+      }
     } catch (error) {
       next(error);
     }
@@ -47,11 +52,11 @@ class PostsController {
 
   static async update(req, res, next) {
     try {
-      const response = await Post.update({
+      const { status, response: post } = await Post.update({
         id: req.params.postId,
         ...req.body.post,
-      });
-      console.log(response);
+      },
+      req.cookies[`${process.env.COOKIE_NAME}`]);
       res.redirect(`${req.params.postId}`);
     } catch (error) {
       next(error);
@@ -60,7 +65,7 @@ class PostsController {
 
   static async delete(req, res, next) {
     try {
-      await Post.delete(req.params.postId);
+      await Post.delete(req.params.postId, req.cookies[`${process.env.COOKIE_NAME}`]);
       res.redirect('/posts');
     } catch (error) {
       next(error);
