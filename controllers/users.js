@@ -23,11 +23,17 @@ class UsersController {
   }
 
   static async edit(req, res, next) {
-    let user;
-
     try {
-      user = await User.get(req.params.userId);
-      res.render('users/edit', user);
+      const { status, response: user } = await User.get(req.params.userId);
+      if (req.session.user.id === user.id) {
+        res.render('users/edit', user);
+      } else {
+        const error = {
+          status: 403,
+          message: 'You don\'t have permission to do this.',
+        };
+        throw error;
+      }
     } catch (error) {
       next(error);
     }

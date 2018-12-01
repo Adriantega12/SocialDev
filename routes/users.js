@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const { UsersController } = require('../controllers');
+const { Auth } = require('../middlewares');
 
 const router = Router();
 
@@ -15,7 +16,7 @@ router.get('/new', (req, res) => {
 router.get('/:userId', UsersController.get);
 
 // EDIT User view
-router.get('/:userId/edit', UsersController.edit);
+router.get('/:userId/edit', Auth.requireSession, UsersController.edit);
 
 // UPDATE User
 router.put('/:userId', UsersController.update);
