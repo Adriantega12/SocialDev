@@ -41,7 +41,7 @@ class User {
     return data;
   }
 
-  static async insert(user) {
+  /*static async insert(user) {
     let data;
 
     try {
@@ -51,14 +51,25 @@ class User {
     }
 
     return data;
+  }*/
+
+  static async update(keyVals, token) {
+    let data;
+    try {
+      data = await api.update('users', keyVals, keyVals.id, token);
+    } catch (error) {
+      throw error;
+    }
+
+    return data;
   }
 
-  async update(keyVals) {
-
-  }
-
-  static async delete(postId) {
-
+  static async delete(postId, token) {
+    try {
+      await api.delete('users', postId, token);
+    } catch (error) {
+      throw error;
+    }
   }
 }
 

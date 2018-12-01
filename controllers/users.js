@@ -40,14 +40,24 @@ class UsersController {
   }
 
   static async update(req, res, next) {
-    res.send(req.body.post);
+    try {
+      const { status, response: user } = await User.update({
+        id: req.params.userId,
+        ...req.body.user,
+      },
+      req.cookies[`${process.env.COOKIE_NAME}`]);
+      res.redirect(`${req.params.userId}`);
+    } catch (error) {
+      next(error);
+    }
   }
 
   static async delete(req, res, next) {
     let deleted;
 
     try {
-      deleted = await User.delete(req.params.postId);
+      deleted = await User.delete(req.params.userId);
+      res.redirect('/logout');
     } catch (error) {
       next(error);
     }
