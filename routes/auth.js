@@ -28,6 +28,6 @@ router.get('/login', (req, res) => {
 router.post('/login', AuthController.login);
 
 // Logout user
-router.post('/logout', AuthController.logout);
+router.get('/logout', AuthController.logout);
 
 module.exports = router;

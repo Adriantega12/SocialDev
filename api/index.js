@@ -11,7 +11,9 @@ class API {
     let status;
 
     try {
-      const response = await fetch(`${this.host}/${route}/${id}`, { method: 'get' });
+      const response = await fetch(`${this.host}/${route}/${id}`, {
+        method: 'get',
+      });
       status = await response.status;
       const jsonPromise = await response.json();
       json = await jsonPromise;
@@ -25,13 +27,13 @@ class API {
     };
   }
 
-  async insert(route, body) {
+  async insert(route, body, token = undefined) {
     const response = await fetch(`${this.host}/${route}`, {
       method: 'post',
       body: new URLSearchParams(body),
-      /*headers: {
-        token: '$2b$10$P5pvSCYoYqA8BQTJGHKG.6BVpxmOvfHdvmZK1i5z6P7d0P5ej1a', // Do something about this
-      },*/
+      headers: {
+        token,
+      },
     });
     const status = await response.status;
     const jsonPromise = await response.json();
@@ -43,13 +45,13 @@ class API {
     };
   }
 
-  async update(route, body, id) {
+  async update(route, body, id, token = undefined) {
     const response = await fetch(`${this.host}/${route}/${id}`, {
       method: 'put',
       body: new URLSearchParams(body),
-      /*headers: {
-        token: '$2b$10$P5pvSCYoYqA8BQTJGHKG.6BVpxmOvfHdvmZK1i5z6P7d0P5ej1a', // Do something about this
-      },*/
+      headers: {
+        token,
+      },
     });
     const status = await response.status;
     const jsonPromise = await response.json();
@@ -61,11 +63,11 @@ class API {
     };
   }
 
-  async delete(route, id) {
+  async delete(route, id, token = undefined) {
     const response = await fetch(`${this.host}/${route}/${id}`, {
       method: 'delete',
       headers: {
-        token: '$2b$10$3hhneboOPKFqEj1sOnkSeiHdXSp7bROt55upsKX1JfFwXvgZrgu', // Do something about this
+        token,
       },
     });
   }
@@ -79,6 +81,38 @@ class API {
     const jsonPromise = await response.json();
     const json = await jsonPromise;
 
+    return {
+      status,
+      response: json,
+    };
+  }
+
+  async logout(token) {
+    const response = await fetch(`${this.host}/auth/logout`, {
+      method: 'get',
+      headers: {
+        token,
+      },
+    });
+    const status = await response.status;
+    const jsonPromise = await response.json();
+    const json = await jsonPromise;
+    return {
+      status,
+      response: json,
+    };
+  }
+
+  async activeSession(token) {
+    const response = await fetch(`${this.host}/auth/session`, {
+      method: 'get',
+      headers: {
+        token,
+      },
+    });
+    const status = await response.status;
+    const jsonPromise = await response.json();
+    const json = await jsonPromise;
     return {
       status,
       response: json,

@@ -10,7 +10,7 @@ class AuthController {
   }
 
   static async login(req, res, next) {
-     try {
+    try {
       const { status, response } = await api.login(req.body.email, req.body.password);
       if (status === 303) { // Succesfully logged in
         res.cookie(process.env.COOKIE_NAME, response.token.token);
@@ -24,7 +24,8 @@ class AuthController {
   }
 
   static async logout(req, res, next) {
-
+    res.clearCookie(process.env.COOKIE_NAME);
+    res.redirect('/users');
   }
 }
 
