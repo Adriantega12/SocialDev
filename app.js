@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 const mustacheExpress = require('mustache-express');
 const router = require('./routes');
-const { errorHandler } = require('./middlewares');
+const { errorHandler, Auth } = require('./middlewares');
 
 const app = express();
 
@@ -25,6 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Method Override
 app.use(methodOverride('_method'));
+
+// Get current session
+app.use(Auth.getCurrentSession);
 
 // Load routes
 app.use(router);

@@ -1,7 +1,7 @@
 const errorHandler = require('./errorHandler');
-const isLoggedIn = require('./auth');
+const Auth = require('./auth');
 
 module.exports = {
   errorHandler,
-  isLoggedIn,
+  Auth,
 };

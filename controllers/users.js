@@ -9,7 +9,7 @@ class UsersController {
     try {
       const { status, response: user } = await User.get(req.params.userId);
       if (status === 200) {
-        res.render('users/show', { API_HOST: process.env.API_HOST, ...user });
+        res.render('users/show', { ...user });
       } else if (status >= 400) {
         res.redirect('/error');
       }

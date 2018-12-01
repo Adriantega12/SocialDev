@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { PostsController } = require('../controllers');
-const { isLoggedIn } = require('../middlewares');
+const { Auth } = require('../middlewares');
 
 const router = Router();
 
@@ -8,23 +8,23 @@ const router = Router();
 router.get('/', PostsController.getAll);
 
 // CREATE Post view
-router.get('/new', [isLoggedIn], (req, res) => {
+router.get('/new', Auth.requireSession, (req, res) => {
   res.render('posts/new');
 });
 
 // NEW Post
-router.post('/', [isLoggedIn], PostsController.insert);
+router.post('/', Auth.requireSession, PostsController.insert);
 
 // SHOW Post view
-router.get('/:postId', [isLoggedIn], PostsController.get);
+router.get('/:postId', PostsController.get);
 
 // EDIT Post view
-router.get('/:postId/edit', [isLoggedIn], PostsController.edit);
+router.get('/:postId/edit', Auth.requireSession, PostsController.edit);
 
 // UPDATE Post
-router.put('/:postId', [isLoggedIn], PostsController.update);
+router.put('/:postId', Auth.requireSession, PostsController.update);
 
 // DESTROY Post
-router.delete('/:postId', [isLoggedIn], PostsController.delete);
+router.delete('/:postId', Auth.requireSession, PostsController.delete);
 
 module.exports = router;
