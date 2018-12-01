@@ -36,7 +36,14 @@ class PostsController {
 
     try {
       post = await Post.get(req.params.postId);
-      res.render('posts/edit', post);
+      if (req.session.user.id === post.userId) {
+        res.render('posts/edit', post);
+      } else {
+        throw next({
+          status: 403,
+          message: 'You don\'t have permission to do this.',
+        });
+      }
     } catch (error) {
       next(error);
     }
