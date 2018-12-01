@@ -6,29 +6,26 @@ class PostsController {
   }
 
   static async get(req, res, next) {
-    let post;
-
     try {
-      post = await Post.get(req.params.postId);
+      const { status, response: post } = await Post.get(req.params.postId);
+      if (status === 200) {
+        res.render('posts/show', { ...post, isAuthor: true });
+      } else if (status >= 400) {
+        res.redirect('/error');
+      }
     } catch (error) {
       next(error);
     }
-
-    res.render('posts/show', { ...post, isAuthor: true }, (error, html) => {
-      if (error) {
-        next(error);
-      } else {
-        res.send(html);
-      }
-    });
   }
 
   static async insert(req, res, next) {
-    let newPost;
-
     try {
-      newPost = await Post.insert(req.body);
-      res.redirect(`posts/${newPost.id}`);
+      const { status, response: newPost } = await Post.insert(req.body);
+      if (status === 201) {
+        res.redirect(`posts/${newPost.id}`);
+      } else if (status === 409) {
+        res.redirect('/error');
+      }
     } catch (error) {
       next(error);
     }

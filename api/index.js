@@ -8,56 +8,61 @@ class API {
 
   async get(route, id) {
     let json;
+    let status;
 
     try {
-      const fetchPromise = await fetch(`${this.host}/${route}/${id}`, { method: 'get' });
-      const jsonPromise = await fetchPromise.json();
+      const response = await fetch(`${this.host}/${route}/${id}`, { method: 'get' });
+      status = await response.status;
+      const jsonPromise = await response.json();
       json = await jsonPromise;
     } catch (error) {
       return error;
     }
 
-    return json;
+    return {
+      status,
+      response: json,
+    };
   }
 
   async insert(route, body) {
-    const fetchPromise = await fetch(`${this.host}/${route}`, {
+    const response = await fetch(`${this.host}/${route}`, {
       method: 'post',
       body: new URLSearchParams(body),
       /*headers: {
         token: '$2b$10$P5pvSCYoYqA8BQTJGHKG.6BVpxmOvfHdvmZK1i5z6P7d0P5ej1a', // Do something about this
       },*/
     });
-    const jsonPromise = await fetchPromise.json();
+    const status = await response.status;
+    const jsonPromise = await response.json();
     const json = await jsonPromise;
 
-    if (API.checkBadResponse(json.status)) {
-      throw json;
-    }
-
-    return json;
+    return {
+      status,
+      response: json,
+    };
   }
 
   async update(route, body, id) {
-    const fetchPromise = await fetch(`${this.host}/${route}/${id}`, {
+    const response = await fetch(`${this.host}/${route}/${id}`, {
       method: 'put',
       body: new URLSearchParams(body),
       /*headers: {
         token: '$2b$10$P5pvSCYoYqA8BQTJGHKG.6BVpxmOvfHdvmZK1i5z6P7d0P5ej1a', // Do something about this
       },*/
     });
-    const jsonPromise = await fetchPromise.json();
+    const status = await response.status;
+    const jsonPromise = await response.json();
     const json = await jsonPromise;
 
-    if (API.checkBadResponse(json.status)) {
-      throw json;
-    }
-
-    return json;
+    return {
+      status,
+      response: json,
+    };
   }
 
   async delete(route, id) {
-    const fetchPromise = await fetch(`${this.host}/${route}/${id}`, {
+    const response = await fetch(`${this.host}/${route}/${id}`, {
       method: 'delete',
       headers: {
         token: '$2b$10$3hhneboOPKFqEj1sOnkSeiHdXSp7bROt55upsKX1JfFwXvgZrgu', // Do something about this
@@ -65,8 +70,19 @@ class API {
     });
   }
 
-  static async checkBadResponse(response) {
-    return response === 404 || response === 401 || response === 403;
+  async login(email, password) {
+    const response = await fetch(`${this.host}/auth/login`, {
+      method: 'post',
+      body: new URLSearchParams({ email, password }),
+    });
+    const status = await response.status;
+    const jsonPromise = await response.json();
+    const json = await jsonPromise;
+
+    return {
+      status,
+      response: json,
+    };
   }
 }
 

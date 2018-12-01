@@ -1,0 +1,25 @@
+{{> ./partials/header}}
+  <link rel="stylesheet" type="text/css" href="css/sign-form.css">
+</head>
+<body>
+
+<main class="main-container">
+  <section class="main-container sign-form">
+    <h1 class="title main-title">Sign Up</h1>
+    <form action="#" method="POST">
+      <input type="text" name="email" placeholder="Email">
+      <input type="password" name="password" placeholder="Password">
+      <button class="btn btn-primary" type="submit">Sign Up</button></a>
+      <a href="/"><button class="btn btn-secondary" type="button">Cancel</button></a>
+    </form>
+  </section>
+</main>
+
+<script type="text/javascript">
+const d = new Date();
+d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
+const expires = `expires=${d.toUTCString()}`;
+document.cookie = `adrian=random;${expires};path=/`;
+</script>
+
+{{> ./partials/footer}}
