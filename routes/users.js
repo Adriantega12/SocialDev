@@ -8,7 +8,7 @@ router.get('/', UsersController.getAll);
 
 // CREATE User view
 router.get('/new', (req, res) => {
-  res.render('users/new');
+  res.redirect('/register');
 });
 
 // NEW User

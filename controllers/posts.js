@@ -8,11 +8,13 @@ class PostsController {
   static async get(req, res, next) {
     try {
       const { status, response: post } = await Post.get(req.params.postId);
+      const viewFields = {
+        ...post,
+        isAuthor: res.locals.hasSession ? (post.userId === req.session.user.id) : false,
+      };
+
       if (status === 200) {
-        res.render('posts/show', {
-          isAuthor: req.session.user.id === post.userId,
-          ...post,
-        });
+        res.render('posts/show', viewFields);
       } else if (status >= 400) {
         res.redirect('/error');
       }
