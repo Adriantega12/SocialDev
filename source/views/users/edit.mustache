@@ -4,13 +4,15 @@
 <main class="main-container">
   <section class="main-container module">
     <h1 class="title main-title">Edit your profile</h1>
-    <form>
+    <form action="/users/{{id}}?_method=PUT" method="POST">
       <label for="first-name">First name:</label>
       <input id="first-name" type="text" name="user[firstName]" placeholder="First name" value={{firstName}}>
       <label for="last-name">Last name:</label>
       <input id="last-name" type="text" name="user[lastName]" placeholder="Last name" value={{lastName}}>
       <label for="age">Age:</label>
       <input id="age" type="text" name="user[age]" placeholder="Age" value={{age}}>
+      <button class="btn btn-primary" type="submit">Submit changes</button>
+      <a class="btn btn-secondary" href="/users/{{id}}">Cancel</a>
     </form>
   </section>
 </main>

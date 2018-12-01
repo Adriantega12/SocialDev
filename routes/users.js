@@ -19,9 +19,9 @@ router.get('/:userId', UsersController.get);
 router.get('/:userId/edit', Auth.requireSession, UsersController.edit);
 
 // UPDATE User
-router.put('/:userId', UsersController.update);
+router.put('/:userId', Auth.requireSession, UsersController.update);
 
 // DESTROY User
-router.delete('/:userId', UsersController.delete);
+router.delete('/:userId', Auth.requireSession, UsersController.delete);
 
 module.exports = router;
