@@ -8,22 +8,15 @@ class UsersController {
   static async get(req, res, next) {
     try {
       const { status, response: user } = await User.get(req.params.userId);
+      const viewFields = {
+        ...user,
+        isOwner: res.locals.hasSession ? (user.id === req.session.user.id) : false,
+      };
       if (status === 200) {
-        res.render('users/show', { ...user });
+        res.render('users/show', viewFields);
       } else if (status >= 400) {
         res.redirect('/error');
       }
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  static async insert(req, res, next) {
-    let newUser;
-
-    try {
-      newUser = await User.insert(req.body);
-      res.redirect(`users/${newUser.id}`);
     } catch (error) {
       next(error);
     }

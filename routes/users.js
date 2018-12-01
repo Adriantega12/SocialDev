@@ -11,9 +11,6 @@ router.get('/new', (req, res) => {
   res.redirect('/register');
 });
 
-// NEW User
-router.post('/', UsersController.insert);
-
 // SHOW User
 router.get('/:userId', UsersController.get);
 

@@ -19,11 +19,15 @@
             <h3 class="title section-title">Comments</h3>
             <p>{{comments.length}}</p>
           </summary>
-        </div>
-        <div class="user-options">
-          <button class="btn btn-primary" type="submit">Add Friend</button>
-          <button class="btn btn-secondary" type="button">Send Message</button>
-        </div>
+        {{#hasSession}}
+          {{^isOwner}}
+          </div>
+          <div class="user-options">
+            <button class="btn btn-primary" type="submit">Add Friend</button>
+            <button class="btn btn-secondary" type="button">Send Message</button>
+          </div>
+          {{/isOwner}}
+        {{/hasSession}}
       </header>
     </section>
 
