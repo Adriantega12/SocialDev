@@ -7,7 +7,7 @@
       <div class="dropdown">
         <button><i class="fas fa-ellipsis-h"></i></button>
         <ul class="dropdown-content">
-          <button type="button">Edit</button>
+          <button class="edit-comment" data-id="{{commentId}}" type="button">Edit</button>
           <form action="/posts/{{id}}/comments/{{commentId}}?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
           </form>
@@ -16,11 +16,14 @@
       {{/sessionOwns}}
     </div>
     <p>{{content}}</p>
+    {{#sessionOwns}}
+    <form id="edit{{commentId}}" class="inactive" action="/posts/{{id}}/comments/{{commentId}}?_method=PUT" method="POST">
+      <textarea name="comment[content]">{{content}}</textarea>
+      <button type="submit">Submit changes</button>
+    </form>
+    {{/sessionOwns}}
   </div>
 
 
-  <!-- <form action="/posts/{{id}}/comments/{{commentId}}?_method=PUT" method="POST">
-    <textarea name="comment[content]">{{content}}</textarea>
-    <button type="button">Submit changes</button>
-  </form> -->
+  <!-- -->
 </article>
