@@ -2,7 +2,16 @@ const api = require('../api');
 
 class AuthController {
   static async register(req, res, next) {
-
+    try {
+      const { status, response } = await api.insert('auth/register/', req.body.user);
+      if (status === 201) {
+        res.send(response);
+      } else if (status === 409) {
+        res.redirect('/error');
+      }
+    } catch (error) {
+      next(error);
+    }
   }
 
   static async recover(req, res, next) {

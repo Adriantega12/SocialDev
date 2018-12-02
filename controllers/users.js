@@ -23,25 +23,41 @@ class UsersController {
   }
 
   static async edit(req, res, next) {
-    let user;
-
     try {
-      user = await User.get(req.params.userId);
-      res.render('users/edit', user);
+      const { status, response: user } = await User.get(req.params.userId);
+      if (req.session.user.id === user.id) {
+        res.render('users/edit', user);
+      } else {
+        const error = {
+          status: 403,
+          message: 'You don\'t have permission to do this.',
+        };
+        throw error;
+      }
     } catch (error) {
       next(error);
     }
   }
 
   static async update(req, res, next) {
-    res.send(req.body.post);
+    try {
+      const { status, response: user } = await User.update({
+        id: req.params.userId,
+        ...req.body.user,
+      },
+      req.cookies[`${process.env.COOKIE_NAME}`]);
+      res.redirect(`${req.params.userId}`);
+    } catch (error) {
+      next(error);
+    }
   }
 
   static async delete(req, res, next) {
     let deleted;
 
     try {
-      deleted = await User.delete(req.params.postId);
+      deleted = await User.delete(req.params.userId);
+      res.redirect('/logout');
     } catch (error) {
       next(error);
     }

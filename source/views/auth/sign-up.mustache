@@ -8,9 +8,11 @@
     <h1 class="title main-title">Sign Up</h1>
     <form action="#" method="POST">
       <label for="email-input">Email:</label>
-      <input id="email-input" type="text" name="email" placeholder="Email">
+      <input id="email-input" type="text" name="user[email]" placeholder="Email">
       <label for="password-input">Password:</label>
-      <input id="password-input" type="password" name="password" placeholder="Password">
+      <input id="password-input" type="password" name="user[password]" placeholder="Password">
+      <label for="confirm-input">Confirm password:</label>
+      <input id="confirm-input" type="password" name="repeat-pass" placeholder="Password">
       <button class="btn btn-primary" type="submit">Sign Up</button></a>
       <a href="/"><button class="btn btn-secondary" type="button">Cancel</button></a>
     </form>
