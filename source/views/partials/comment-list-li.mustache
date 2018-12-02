@@ -1,7 +1,23 @@
 <article class="comment">
-  <img class="avatar avatar-md" src="{{ppPath}}">
+  <img class="avatar avatar-md" src="{{API_HOST}}/{{ppPath}}">
   <div class="comment-content">
     <h3>{{author}}</h3>
     <p>{{content}}</p>
   </div>
+  {{#sessionOwns}}
+  <ul>
+    <li>
+      Edit
+      <form action="/posts/{{id}}/comments/{{commentId}}?_method=PUT" method="POST">
+        <textarea class="text-input" name="comment[content]">{{content}}</textarea>
+        <button type="submit">Submit changes</button>
+      </form>
+    </li>
+    <li>
+      <form action="/posts/{{id}}/comments/{{commentId}}?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  </ul>
+  {{/sessionOwns}}
 </article>

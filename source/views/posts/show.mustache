@@ -11,23 +11,28 @@
 
       <!-- Author description -->
       <article class="module author">
-        <img class="avatar avatar-lg" src="assets/images/avatar.png">
+        <img class="avatar avatar-lg" src="{{API_HOST}}/{{author.profilePic}}">
         <div class="author-description">
-          <h3>{{author}}</h3>
+          <h3>{{author.firstName}} {{author.lastName}}</h3>
           <p>Level: <span>10</span></p> <!-- TBD -->
         </div>
       </article>
 
       {{#isAuthor}}
-      <section class="module">
-        <a class="btn btn-secondary" href="/posts/{{id}}/edit">Edit</a>
-        <form action="/posts/{{id}}?_method=DELETE" method="POST">
-          <button class="btn" type="submit">Delete</button>
-        </form>
-      </section>
+      <ul>
+        <li>
+          <a href="/posts/{{id}}/edit">Edit</a>
+        </li>
+        <li>
+          <form action="/posts/{{id}}?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      </ul>
       {{/isAuthor}}
 
       <!-- Rate article -->
+      {{#hasSession}}
       <section class="module">
         <h2 class="title section-title">Rate this article</h2>
         <section class="score">
@@ -38,20 +43,23 @@
           <i class="fas fa-star"></i>
         </section>
       </section>
+      {{/hasSession}}
 
       <section class="module comment-section">
-
+        {{#hasSession}}
         <!-- "Leave a comment" section -->
         <section class="module">
           <h2 class="title section-title">Leave a comment</h2>
           <section class="respond-form">
-            <img class="avatar avatar-sm" src="assets/images/avatar.png">
-            <form>
-              <textarea></textarea>
+            <img class="avatar avatar-sm" src="{{API_HOST}}/{{ppPath}}">
+            <form action="/posts/{{id}}/comments" method="POST">
+              <textarea class="text-input" name="comment[content]">{{content}}</textarea>
               <button class="btn btn-primary" type="submit">Reply</button>
             </form>
           </section>
         </section>
+        {{/hasSession}}
+
 
         <!-- Comment list starts here -->
         <h2 class="title section-title">Comments</h2>
