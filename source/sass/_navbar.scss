@@ -41,8 +41,9 @@ $orange: #E45E2C;     // Highlight over dark background
     color: $orange;
   }
 
-  li:not(:last-child):not(#nav-logo) {
-    margin-right: 10px;
+  li:not(:last-child):not(#nav-logo):not(#search-icon):not(#search-bar) {
+    margin-left: 4px;
+    margin-right: 14px;
   }
 
   a,
@@ -51,9 +52,28 @@ $orange: #E45E2C;     // Highlight over dark background
     text-decoration: none;
   }
 
-  /*input[type="text"] {
-    background: $blue;
-  }*/
+  %search {
+    color: $gray;
+    background-color: $blue;
+  }
+
+  input[type="text"] {
+    @extend %search;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-right: 14px;
+  }
+
+  #search-icon {
+    @extend %search;
+    height: 26px;
+    display: flex;
+    margin-right: 0;
+    padding-left: 5px;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 
   .fa-home,
   .fa-globe {
@@ -66,24 +86,8 @@ $orange: #E45E2C;     // Highlight over dark background
       font-size: 1.3em;
     }
   }
+
+  #menu-bar {
+    display: none;
+  }
 }
-
-// #logo {
-//   a {
-//     font-size: 24px;
-//   }
-// }
-
-// #search-bar {
-//   margin-left: 0;
-//   }
-
-// #menu-bar {
-//   display: none;
-//   }
-
-// #navbar-center {
-//   li {
-//     margin: 0 16px;
-//   }
-// }
