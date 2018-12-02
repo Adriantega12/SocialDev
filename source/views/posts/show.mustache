@@ -1,76 +1,76 @@
 {{> ./partials/header}}
-  <link id="mainCSS"rel="stylesheet" type="text/css" href="/css/post.css">
 {{> ./partials/navbar}}
 
   <main class="main-container">
-    <section class="module main-container">
-      <article class="blog-post">
-        <h1 class="title main-title">{{title}}</h1>
-        {{text}}
-      </article>
+    <article>
+      <h1 class="main-title">{{title}}</h1>
+      <article id="post-content">{{text}}</article>
+    </article>
 
-      <!-- Author description -->
-      <article class="module author">
-        <img class="avatar avatar-lg" src="{{API_HOST}}/{{author.profilePic}}">
-        <div class="author-description">
-          <h3>{{author.firstName}} {{author.lastName}}</h3>
-          <p>Level: <span>10</span></p> <!-- TBD -->
-        </div>
-      </article>
+    <!-- Author description -->
+    <article id="author-sum" class="min-container">
+      <img class="avatar-lg" src="{{API_HOST}}/{{author.profilePic}}">
+      <div class="summary">
+        <h2>{{author.firstName}} {{author.lastName}}</h2>
+        <p>Level: <span>{{author.level}}</span></p>
+        <p class="date">Published on: {{date}}</p>
+      </div>
+    </article>
 
-      {{#isAuthor}}
-      <ul>
-        <li>
+    {{#isAuthor}}
+    <section id="post-options">
+      <div class="dropdown">
+        <button><i class="fas fa-ellipsis-h"></i></button>
+        <ul class="dropdown-content">
           <a href="/posts/{{id}}/edit">Edit</a>
-        </li>
-        <li>
           <form action="/posts/{{id}}?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
           </form>
-        </li>
-      </ul>
-      {{/isAuthor}}
+        </ul>
+      </div>
+    </section>
+    {{/isAuthor}}
 
-      <!-- Rate article -->
+    <!-- Rate article -->
+    {{#hasSession}}
+    <section>
+      <h2>Rate this article</h2>
+      <section>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </section>
+    </section>
+    {{/hasSession}}
+
+    <section id="comment-section">
       {{#hasSession}}
-      <section class="module">
-        <h2 class="title section-title">Rate this article</h2>
-        <section class="score">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+      <!-- "Leave a comment" section -->
+      <section id="reply-comment">
+        <h2>Leave a comment</h2>
+        <section class="min-container">
+          <img class="avatar-md" src="{{API_HOST}}/{{ppPath}}">
+          <div class="summary">
+            <form action="/posts/{{id}}/comments" method="POST">
+              <textarea name="comment[content]">{{content}}</textarea>
+              <button type="submit">Leave a comment!</button>
+            </form>
+          </div>
         </section>
       </section>
       {{/hasSession}}
 
-      <section class="module comment-section">
-        {{#hasSession}}
-        <!-- "Leave a comment" section -->
-        <section class="module">
-          <h2 class="title section-title">Leave a comment</h2>
-          <section class="respond-form">
-            <img class="avatar avatar-sm" src="{{API_HOST}}/{{ppPath}}">
-            <form action="/posts/{{id}}/comments" method="POST">
-              <textarea class="text-input" name="comment[content]">{{content}}</textarea>
-              <button class="btn btn-primary" type="submit">Reply</button>
-            </form>
-          </section>
-        </section>
-        {{/hasSession}}
-
-
-        <!-- Comment list starts here -->
-        <h2 class="title section-title">Comments</h2>
-        <ol class="comment-list">
-        {{#comments}}
-          <li>
-          {{> ./partials/comment-list-li}}
-          </li>
-        {{/comments}}
-        </ol>
-      </section>
+      <!-- Comment list starts here -->
+      <h2>Comments</h2>
+      <ol class="list">
+      {{#comments}}
+        <li>
+        {{> ./partials/comment-list-li}}
+        </li>
+      {{/comments}}
+      </ol>
     </section>
   </main>
 

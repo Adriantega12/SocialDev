@@ -1,0 +1,32 @@
+@import 'mixins';
+
+%avatar {
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.avatar-sm {
+  @extend %avatar;
+  @include avatar-dimensions (32px);
+}
+
+.avatar-md {
+  @extend %avatar;
+  @include avatar-dimensions (48px);
+}
+
+.avatar-lg {
+  @extend %avatar;
+  @include avatar-dimensions (64px);
+}
+
+.avatar-xlg {
+  @extend %avatar;
+  @include avatar-dimensions (152px);
+}
+
+.post-preview {
+  height: 152px;
+  width: 152px;
+  object-fit: cover;
+}

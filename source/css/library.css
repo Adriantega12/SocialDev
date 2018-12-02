@@ -197,7 +197,8 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 /**Inputs**/
-/*.text-input input[type="text"], .text-input textarea {
+input[type="text"].text-input, textarea.text-input {
+  resize: none;
   width: calc(100% - 2*0.8em);
   padding: 0.5em 0.8em;
   border: none;
@@ -207,7 +208,7 @@ a, a:link, a:visited, a:hover, a:active {
 
 .text-input input[type="text"] {
   border-radius: 5px;
-}*/
+}
 
 /*Specific modules for reusable cases*/
 

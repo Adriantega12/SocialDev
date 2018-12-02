@@ -1,0 +1,11 @@
+// List can be a ul or ol, content has to be on lis
+.list {
+  @include sides-padding(5%);
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  li:hover {
+    background-color: rgba(255, 2555, 255, 0.5);
+  }
+}

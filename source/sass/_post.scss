@@ -1,0 +1,30 @@
+#post-content {
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+#author-sum {
+  align-self: center;
+  box-sizing: border-box;
+}
+
+#post-options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#reply-comment {
+  align-self: center;
+  justify-content: center;
+  width: 50%;
+}
+
+#reply-comment .summary form {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,45 +1,53 @@
 {{> ./partials/header}}
-  <link id="mainCSS"rel="stylesheet" type="text/css" href="/css/profile.css">
 {{> ./partials/navbar}}
 
-  <main>
-    <section>
-      <header class="profile-header">
-        <div class="user-summary">
-          <div class="user-info">
-            <img class="avatar avatar-xlg" src="{{API_HOST}}/{{profilePic}}">
-            <h1 class="title main-title">{{firstName}} {{lastName}}</h1>
-            <p>Level: {{level}}</p>
-          </div>
-          <summary class="stats">
-            <h3 class="title section-title">Posts</h3>
-            <p>{{posts.length}}</p>
-            <h3 class="title section-title">Score</h3>
-            <p><i class="fas fa-star"></i>X avg</p>
-            <h3 class="title section-title">Comments</h3>
-            <p>{{comments.length}}</p>
-          </summary>
-        {{#hasSession}}
-          {{^isOwner}}
-          </div>
-          <div class="user-options">
-            <button class="btn btn-primary" type="submit">Add Friend</button>
-            <button class="btn btn-secondary" type="button">Send Message</button>
-          </div>
-          {{/isOwner}}
-        {{/hasSession}}
-      </header>
-    </section>
+<section id="user-profile">
+  <img class="avatar-xlg" src="{{API_HOST}}/{{profilePic}}">
+  <h1 class="main-title">
+    {{#firstName}}
+      {{firstName}}
+    {{/firstName}}
+    {{^firstName}}
+      Mr.
+    {{/firstName}}
+    {{#lastName}}
+      {{lastName}}
+    {{/lastName}}
+    {{^lastName}}
+      Unkwown
+    {{/lastName}}
+  </h1>
+  <section id="user-summary">
+    <div class="summary-section">
+      <h2>Posts:</h2>
+      <p>{{posts.length}}</p>
+    </div>
+    <div class="summary-section">
+      <h2>Comments:</h2>
+      <p>{{comments.length}}</p>
+    </div>
+    <div class="summary-section">
+      <h2>Level:</h2>
+      <p>{{#level}}{{/level}}{{^level}}0{{/level}}</p>
+    </div>
+    <div class="summary-section">
+      <h2>Avg. score:</h2>
+      <p>0</p>
+    </div>
+  </section>
+</section>
 
-    <main class="main-container">
-      <section class="main-container module">
-        <h2 class="title section-title">Posts</h2>
-        <ol class="list"></ol>
-        {{#posts}}
+<main class="main-container">
+  <section>
+    <h2>Posts</h2>
+    <ol class="list">
+      {{#posts}}
+        <li>
           {{> ./partials/post-list-li}}
-        {{/posts}}
-      </section>
-    </main>
-  </main>
+        </li>
+      {{/posts}}
+    </ol>
+  </section>
+</main>
 
 {{> ./partials/footer}}
