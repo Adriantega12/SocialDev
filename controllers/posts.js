@@ -8,17 +8,18 @@ class PostsController {
   static async get(req, res, next) {
     try {
       const { status, response: post } = await Post.get(req.params.postId);
-      const { response: author } = await User.get(post.userId);
-      post.comments.forEach((comment) => {
-        comment.sessionOwns = res.locals.hasSession ? comment.userId === req.session.user.id : false;
-      });
-      const viewFields = {
-        ...post,
-        author,
-        isAuthor: res.locals.hasSession ? (author.id === req.session.user.id) : false,
-      };
 
       if (status === 200) {
+        const { response: author } = await User.get(post.userId);
+        post.comments.forEach((comment) => {
+          comment.sessionOwns = res.locals.hasSession
+            ? comment.userId === req.session.user.id : false;
+        });
+        const viewFields = {
+          ...post,
+          author,
+          isAuthor: res.locals.hasSession ? (author.id === req.session.user.id) : false,
+        };
         res.render('posts/show', viewFields);
       } else if (status >= 400) {
         res.redirect('/error');

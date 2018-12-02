@@ -15,6 +15,8 @@ class Auth {
         res.locals.ppPath = response.ppPath;
         res.locals.hasSession = true;
         res.locals.sessionUserId = response.userId;
+      } else if (status === 401) {
+        res.locals.hasSession = false;
       }
       // console.log(req.originalUrl);
     } catch (error) {
