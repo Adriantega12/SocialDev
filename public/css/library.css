@@ -3,18 +3,22 @@
   border-radius: 100%; }
 
 .avatar-sm {
+  min-width: 32px;
   width: 32px;
   height: 32px; }
 
 .avatar-md {
+  min-width: 48px;
   width: 48px;
   height: 48px; }
 
 .avatar-lg {
+  min-width: 64px;
   width: 64px;
   height: 64px; }
 
 .avatar-xlg {
+  min-width: 152px;
   width: 152px;
   height: 152px; }
 
@@ -66,26 +70,34 @@
     display: none; }
 
 .main-container {
-  margin-left: 50px;
-  margin-right: 50px; }
+  margin-left: 10%;
+  margin-right: 10%; }
+
+.min-container {
+  display: flex;
+  justify-content: flex-start; }
 
 .avatar-sm, .avatar-md, .avatar-lg, .avatar-xlg {
   object-fit: cover;
   border-radius: 100%; }
 
 .avatar-sm {
+  min-width: 32px;
   width: 32px;
   height: 32px; }
 
 .avatar-md {
+  min-width: 48px;
   width: 48px;
   height: 48px; }
 
 .avatar-lg {
+  min-width: 64px;
   width: 64px;
   height: 64px; }
 
 .avatar-xlg {
+  min-width: 152px;
   width: 152px;
   height: 152px; }
 
@@ -93,6 +105,39 @@ input[type="text"] {
   border: 0;
   border-radius: 5px;
   padding: 2px 5px; }
+
+.main-title {
+  font-size: 1.8em; }
+
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+.dropdown-content {
+  position: absolute;
+  display: none; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
+.list {
+  padding-left: 5%;
+  padding-right: 5%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column; }
+
+#post-content {
+  text-align: justify;
+  line-height: 1.5em; }
+
+#post-options {
+  display: flex;
+  justify-content: flex-end; }
+
+.comment-header {
+  display: flex;
+  justify-content: space-between; }
 
 header, section, footer, aside, nav, main, article, figure {
   display: block; }
@@ -105,3 +150,12 @@ header, section, footer, aside, nav, main, article, figure {
 
 body {
   background: #EFEFEF; }
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.date {
+  font-size: 0.8em;
+  letter-spacing: 0.05em; }

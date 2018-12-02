@@ -1,8 +1,10 @@
-@mixin sides-padding($value) {
-  padding-left: $value;
-  padding-right: $value;
-}
+@import 'mixins';
 
 .main-container {
-  @include sides-margin(50px);
+  @include sides-margin(10%);
+}
+
+.min-container {
+  display: flex;
+  justify-content: flex-start;
 }

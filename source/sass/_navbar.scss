@@ -10,12 +10,8 @@ $light-blue: #BDD4DE;
 $gray: #EFEFEF;       // Body background
 $orange: #E45E2C;     // Highlight over dark background
 
+@import 'mixins';
 @import 'avatar';
-
-@mixin sides-margin ($value) {
-  margin-left: $value;
-  margin-right: $value;
-}
 
 #navbar {
   // Sizes
