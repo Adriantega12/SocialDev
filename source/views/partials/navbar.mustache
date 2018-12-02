@@ -20,7 +20,7 @@
             <img class="avatar avatar-sm" src="{{API_HOST}}/{{ppPath}}">
           </a>
         </li>
-        <li><a href="create-post.html"><i class="fas fa-plus"></i></a></li>
+        <li><a href="{{CLIENT_HOST}}/posts/new"><i class="fas fa-plus"></i></a></li>
       {{/hasSession}}
       {{^hasSession}}
         <li><a class="btn btn-primary" href="/register">Sign Up</a></li>

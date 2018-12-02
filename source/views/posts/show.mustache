@@ -11,9 +11,9 @@
 
       <!-- Author description -->
       <article class="module author">
-        <img class="avatar avatar-lg" src="assets/images/avatar.png">
+        <img class="avatar avatar-lg" src="{{API_HOST}}/{{author.profilePic}}">
         <div class="author-description">
-          <h3>{{author}}</h3>
+          <h3>{{author.firstName}} {{author.lastName}}</h3>
           <p>Level: <span>10</span></p> <!-- TBD -->
         </div>
       </article>

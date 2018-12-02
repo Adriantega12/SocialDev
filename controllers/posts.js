@@ -1,4 +1,4 @@
-const { Post } = require('../models');
+const { User, Post } = require('../models');
 
 class PostsController {
   static async getAll(req, res, next) {
@@ -8,9 +8,11 @@ class PostsController {
   static async get(req, res, next) {
     try {
       const { status, response: post } = await Post.get(req.params.postId);
+      const { response: author } = await User.get(post.userId);
       const viewFields = {
         ...post,
-        isAuthor: res.locals.hasSession ? (post.userId === req.session.user.id) : false,
+        author,
+        isAuthor: res.locals.hasSession ? (author.id === req.session.user.id) : false,
       };
 
       if (status === 200) {
