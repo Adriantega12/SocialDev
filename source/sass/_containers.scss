@@ -1,0 +1,8 @@
+@mixin sides-padding($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+.main-container {
+  @include sides-margin(2%);
+}

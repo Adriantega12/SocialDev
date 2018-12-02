@@ -1,0 +1,28 @@
+%avatar {
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.avatar-sm {
+  @extend %avatar;
+  width: 32px;
+  height: 32px;
+}
+
+.avatar-md {
+  @extend %avatar;
+  width: 48px;
+  height: 48px;
+}
+
+.avatar-lg {
+  @extend %avatar;
+  width: 64px;
+  height: 64px;
+}
+
+.avatar-xlg {
+  @extend %avatar;
+  width: 152px;
+  height: 152px;
+}

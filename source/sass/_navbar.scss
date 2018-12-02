@@ -1,0 +1,89 @@
+// Color palette
+// - Dark blue:  #2B3A42 rgb(43,58,66)
+// - Blue:       #3F5765 rgb(63,87,101)
+// - Light blue: #BDD4DE rgb(189,212,222)
+// - Gray-ish:   #EFEFEF rgb(239,239,239)
+// - Orange:     #E45E2C rgb(228,94,44)
+$dark-blue: #2B3A42;  // Navbar background
+$blue: #3F5765;
+$light-blue: #BDD4DE;
+$gray: #EFEFEF;       // Body background
+$orange: #E45E2C;     // Highlight over dark background
+
+@import 'avatar';
+
+@mixin sides-margin ($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+#navbar {
+  // Sizes
+  height: 46px;
+  // Font
+  font-weight: 700;
+  // Colors
+  color: $gray;
+  background: $dark-blue;
+
+  ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  li {
+    cursor: pointer;
+  }
+
+  li:hover, li a:hover {
+    color: $orange;
+  }
+
+  li:not(:last-child):not(#nav-logo) {
+    margin-right: 10px;
+  }
+
+  a,
+  a:visited {
+    color: $gray;
+    text-decoration: none;
+  }
+
+  /*input[type="text"] {
+    background: $blue;
+  }*/
+
+  .fa-home,
+  .fa-globe {
+    margin-right: 3px;
+  }
+
+  #nav-logo {
+    @include sides-margin(auto);
+    a {
+      font-size: 1.3em;
+    }
+  }
+}
+
+// #logo {
+//   a {
+//     font-size: 24px;
+//   }
+// }
+
+// #search-bar {
+//   margin-left: 0;
+//   }
+
+// #menu-bar {
+//   display: none;
+//   }
+
+// #navbar-center {
+//   li {
+//     margin: 0 16px;
+//   }
+// }
