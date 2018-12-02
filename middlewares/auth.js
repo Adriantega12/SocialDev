@@ -14,7 +14,7 @@ class Auth {
         res.locals.ppPath = response.ppPath;
         res.locals.hasSession = true;
       }
-      console.log(req.originalUrl);
+      // console.log(req.originalUrl);
     } catch (error) {
       next(error);
     }
