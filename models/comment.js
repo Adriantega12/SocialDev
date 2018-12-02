@@ -47,6 +47,7 @@ class Comment {
 
   static async update(postId, keyVals, token) {
     let data;
+
     try {
       data = await api.update(`posts/${postId}/comments`, keyVals, keyVals.id, token);
     } catch (error) {

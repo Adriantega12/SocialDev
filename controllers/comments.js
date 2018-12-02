@@ -40,23 +40,6 @@ class CommentsController {
     }
   }
 
-  static async edit(req, res, next) {
-    try {
-      const { status, response: post } = await Comment.get(req.params.postId, req.params.postId);
-      if (req.session.user.id === post.userId) {
-        //res.render('posts/edit', post);
-      } else {
-        const error = {
-          status: 403,
-          message: 'You don\'t have permission to do this.',
-        };
-        throw error;
-      }
-    } catch (error) {
-      next(error);
-    }
-  }
-
   static async update(req, res, next) {
     try {
       const { status, response: comment } = await Comment.update(
@@ -67,7 +50,7 @@ class CommentsController {
         },
         req.cookies[`${process.env.COOKIE_NAME}`],
       );
-      //res.redirect(`${req.params.commentId}`);
+      res.redirect(`/posts/${req.params.postId}`);
     } catch (error) {
       next(error);
     }
@@ -75,8 +58,8 @@ class CommentsController {
 
   static async delete(req, res, next) {
     try {
-      await Comment.delete(req.params.commentId, req.cookies[`${process.env.COOKIE_NAME}`]);
-      //res.redirect('/comments');
+      await Comment.delete(req.params.postId, req.params.commentId, req.cookies[`${process.env.COOKIE_NAME}`]);
+      res.redirect(`/posts/${req.params.postId}`);
     } catch (error) {
       next(error);
     }

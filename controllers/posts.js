@@ -9,6 +9,9 @@ class PostsController {
     try {
       const { status, response: post } = await Post.get(req.params.postId);
       const { response: author } = await User.get(post.userId);
+      post.comments.forEach((comment) => {
+        comment.sessionOwns = res.locals.hasSession ? comment.userId === req.session.user.id : false;
+      });
       const viewFields = {
         ...post,
         author,
