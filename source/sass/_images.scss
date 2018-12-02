@@ -24,3 +24,9 @@
   @extend %avatar;
   @include avatar-dimensions (152px);
 }
+
+.post-preview {
+  height: 152px;
+  width: 152px;
+  object-fit: cover;
+}

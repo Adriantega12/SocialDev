@@ -1,17 +1,17 @@
-<article class="preview">
-  <img src="{{path}}">
-  <div class="post-preview-content">
-    <a href="/posts/{{id}}"><h3 class="title">{{title}}</h3></a>
-    <article class="post-excerpt">
-      <p>{{content}}</p>
+<article class="min-container">
+  <img class="post-preview" src="{{API_HOST}}/{{path}}">
+  <div class="summary">
+    <a href="/posts/{{id}}"><h3>{{title}}</h3></a>
+    <article>
+      <p>{{text}}</p>
     </article>
-    <article class="post-author">
+    <article>
       {{author}}
     </article>
-    <section class="date">
+    <section>
       {{date}}
     </section>
-    <section class="post-score">
+    <section>
       <i class="fas fa-star"></i>
       <i class="fas fa-star"></i>
       <i class="fas fa-star-half-alt"></i>

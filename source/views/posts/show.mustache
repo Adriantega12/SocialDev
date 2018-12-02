@@ -8,7 +8,7 @@
     </article>
 
     <!-- Author description -->
-    <article class="min-container">
+    <article id="author-sum" class="min-container">
       <img class="avatar-lg" src="{{API_HOST}}/{{author.profilePic}}">
       <div class="summary">
         <h2>{{author.firstName}} {{author.lastName}}</h2>
@@ -45,21 +45,22 @@
     </section>
     {{/hasSession}}
 
-    <section>
+    <section id="comment-section">
       {{#hasSession}}
       <!-- "Leave a comment" section -->
-      <section>
+      <section id="reply-comment">
         <h2>Leave a comment</h2>
-        <section>
+        <section class="min-container">
           <img class="avatar-md" src="{{API_HOST}}/{{ppPath}}">
-          <form action="/posts/{{id}}/comments" method="POST">
-            <textarea name="comment[content]">{{content}}</textarea>
-            <button type="submit">Reply</button>
-          </form>
+          <div class="summary">
+            <form action="/posts/{{id}}/comments" method="POST">
+              <textarea name="comment[content]">{{content}}</textarea>
+              <button type="submit">Leave a comment!</button>
+            </form>
+          </div>
         </section>
       </section>
       {{/hasSession}}
-
 
       <!-- Comment list starts here -->
       <h2>Comments</h2>

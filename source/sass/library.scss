@@ -13,11 +13,12 @@ $orange: #E45E2C;     // Highlight over dark background
 @import 'mixins';
 @import 'navbar';
 @import 'containers';
-@import 'avatar';
+@import 'images';
 @import 'inputs';
 @import 'titles';
 @import 'dropdowns';
 @import 'lists';
+@import 'users';
 @import 'post';
 @import 'comments';
 
@@ -38,11 +39,10 @@ body {
   background: $gray;
 }
 
-.summary {
-  width: 100%;
+main {
+  color: $blue;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .date {

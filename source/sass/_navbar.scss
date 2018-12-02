@@ -11,7 +11,7 @@ $gray: #EFEFEF;       // Body background
 $orange: #E45E2C;     // Highlight over dark background
 
 @import 'mixins';
-@import 'avatar';
+@import 'images';
 
 #navbar {
   // Sizes
@@ -21,6 +21,7 @@ $orange: #E45E2C;     // Highlight over dark background
   // Colors
   color: $gray;
   background: $dark-blue;
+  align-content: center;
 
   ul {
     height: 100%;

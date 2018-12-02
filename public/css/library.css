@@ -22,11 +22,17 @@
   width: 152px;
   height: 152px; }
 
+.post-preview {
+  height: 152px;
+  width: 152px;
+  object-fit: cover; }
+
 #navbar {
   height: 46px;
   font-weight: 700;
   color: #EFEFEF;
-  background: #2B3A42; }
+  background: #2B3A42;
+  align-content: center; }
   #navbar ul {
     height: 100%;
     display: flex;
@@ -76,6 +82,11 @@
 .min-container {
   display: flex;
   justify-content: flex-start; }
+  .min-container .summary {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
 
 .avatar-sm, .avatar-md, .avatar-lg, .avatar-xlg {
   object-fit: cover;
@@ -100,6 +111,11 @@
   min-width: 152px;
   width: 152px;
   height: 152px; }
+
+.post-preview {
+  height: 152px;
+  width: 152px;
+  object-fit: cover; }
 
 input[type="text"] {
   border: 0;
@@ -126,14 +142,51 @@ input[type="text"] {
   list-style-type: none;
   display: flex;
   flex-direction: column; }
+  .list li:hover {
+    background-color: rgba(255, 255, 255, 0.5); }
+
+#user-profile {
+  background-color: #3F5765;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+#user-summary {
+  display: flex;
+  align-content: space-around; }
+
+.summary-section {
+  display: flex;
+  flex-direction: column; }
+
+#user-summary p {
+  align-self: center; }
 
 #post-content {
   text-align: justify;
   line-height: 1.5em; }
 
+#author-sum {
+  align-self: center;
+  box-sizing: border-box; }
+
 #post-options {
   display: flex;
   justify-content: flex-end; }
+
+#comment-section {
+  display: flex;
+  flex-direction: column; }
+
+#reply-comment {
+  align-self: center;
+  justify-content: center;
+  width: 50%; }
+
+#reply-comment .summary form {
+  display: flex;
+  flex-direction: column; }
 
 .comment-header {
   display: flex;
@@ -151,11 +204,10 @@ header, section, footer, aside, nav, main, article, figure {
 body {
   background: #EFEFEF; }
 
-.summary {
-  width: 100%;
+main {
+  color: #3F5765;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around; }
+  flex-direction: column; }
 
 .date {
   font-size: 0.8em;
