@@ -74,29 +74,15 @@ $orange: #E45E2C;     // Highlight over dark background
   }
 
   .dropdown-content {
-    margin-top: 2px;
-    display: flex;
-    flex-direction: column;
-
-    a {
-      display: none;
-      text-align: center;
-      min-width: 100px;
-      color: $gray;
-      border: 1px solid $dark-blue;
-      background-color: rgba(63, 87, 101, 0.8);
+    height: auto;
+    .btn {
+      color: $blue;
+      padding: 2px 0;
+      border-radius: 0;
+      min-width: 128px;
     }
-  }
-
-  .dropdown:hover {
-    .dropdown-content {
-      a {
-        display: block;
-      }
-      a:hover {
-        color: $blue;
-        background-color: rgba(189, 212, 222, 0.6);
-      }
+    .btn:hover {
+      color: $gray;
     }
   }
 

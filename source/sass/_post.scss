@@ -11,6 +11,16 @@
 #post-options {
   display: flex;
   justify-content: flex-end;
+
+  .dropdown-content {
+    .btn {
+      padding: 2px 0;
+      min-width: 128px;
+    }
+    .btn:hover {
+      color: $gray;
+    }
+  }
 }
 
 #comment-section {
