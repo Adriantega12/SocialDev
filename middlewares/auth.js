@@ -3,8 +3,6 @@ const api = require('../api');
 class Auth {
   static async getCurrentSession(req, res, next) {
     req.session = {};
-    res.locals.API_HOST = process.env.API_HOST; // Needs to be moved to app.locals eventually
-    res.locals.CLIENT_HOST = process.env.CLIENT_HOST;
 
     try {
       const { status, response } = await api.activeSession(req.cookies[`${process.env.COOKIE_NAME}`]);

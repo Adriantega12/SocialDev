@@ -1,9 +1,13 @@
-// %title {
-//   display: flex;
-//   justify-content: flex-start;
-// }
+%title {
+  margin: 16px 0;
+}
 
 .main-title {
-  // @extend %title;
+  @extend %title;
   font-size: 1.8em;
+}
+
+.section-title {
+  @extend %title;
+  font-size: 1.3em;
 }

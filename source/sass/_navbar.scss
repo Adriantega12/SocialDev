@@ -46,7 +46,6 @@ $orange: #E45E2C;     // Highlight over dark background
   a,
   a:visited {
     color: $gray;
-    text-decoration: none;
   }
 
   %search {
@@ -87,4 +86,33 @@ $orange: #E45E2C;     // Highlight over dark background
   #menu-bar {
     display: none;
   }
+
+  .dropdown-content {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      display: none;
+      text-align: center;
+      min-width: 100px;
+      color: $gray;
+      border: 1px solid $dark-blue;
+      background-color: rgba(63, 87, 101, 0.8);
+    }
+  }
+
+  .dropdown:hover {
+    .dropdown-content {
+      a {
+        display: block;
+      }
+      a:hover {
+        color: $blue;
+        background-color: rgba(189, 212, 222, 0.6);
+      }
+    }
+  }
+
+
 }

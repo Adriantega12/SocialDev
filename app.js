@@ -17,6 +17,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Cookie parser
 app.use(cookieParser());
 
+// App locals
+app.locals.API_HOST = process.env.API_HOST;
+app.locals.CLIENT_HOST = process.env.CLIENT_HOST;
+
 // Template rendering setup
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');

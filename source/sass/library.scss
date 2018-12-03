@@ -11,7 +11,6 @@ $gray: #EFEFEF;       // Body background
 $orange: #E45E2C;     // Highlight over dark background
 
 @import 'mixins';
-@import 'navbar';
 @import 'containers';
 @import 'images';
 @import 'inputs';
@@ -19,6 +18,7 @@ $orange: #E45E2C;     // Highlight over dark background
 @import 'dropdowns';
 @import 'carousel';
 @import 'lists';
+@import 'navbar';
 @import 'users';
 @import 'post';
 @import 'comments';
@@ -44,6 +44,17 @@ main {
   color: $blue;
   display: flex;
   flex-direction: column;
+}
+
+a,
+a:visited {
+  color: $blue;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
 }
 
 .date {
