@@ -62,6 +62,15 @@ class UsersController {
       next(error);
     }
   }
+
+  static async createFriendship(req, res, next) {
+    try {
+      await User.createFriendship(req.params.userId);
+      res.redirect(`/users/${req.params.userId}`);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = UsersController;
