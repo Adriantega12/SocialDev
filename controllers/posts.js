@@ -5,6 +5,18 @@ class PostsController {
     res.send('This was supposed to be a put');
   }
 
+  static async getNetworkFeed(req, res, next) {
+    try {
+      const { status, response: topPosts } = await Post.getTop();
+
+      if (status === 200) {
+        res.render('network', { topPosts });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
+
   static async get(req, res, next) {
     try {
       const { status, response: post } = await Post.get(req.params.postId);

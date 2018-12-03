@@ -21,6 +21,18 @@ class Post {
 
   }
 
+  static async getTop() {
+    let data;
+
+    try {
+      data = await api.getAll('posts/network');
+    } catch (error) {
+      throw error;
+    }
+
+    return data;
+  }
+
   static async get(postId) {
     let data;
 
