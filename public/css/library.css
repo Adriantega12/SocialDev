@@ -7,6 +7,7 @@
   padding-right: 4px;
   display: flex;
   justify-content: flex-start;
+  margin-top: 2px;
   margin-bottom: 16px; }
   .min-container .summary {
     margin-left: 8px;
@@ -48,6 +49,17 @@ input[type="text"] {
   border: 0;
   border-radius: 5px;
   padding: 2px 5px; }
+
+textarea {
+  resize: none; }
+
+.btn-primary {
+  color: #EFEFEF;
+  background-color: #3F5765; }
+
+.btn-secondary {
+  color: #2B3A42;
+  background-color: #EFEFEF; }
 
 .main-title, .section-title {
   margin: 16px 0; }
@@ -100,6 +112,7 @@ input[type="text"] {
     right: 2%; }
 
 .carousel-el-preview {
+  padding-top: 16px;
   width: 100%;
   height: 20%;
   bottom: 0;
@@ -108,7 +121,8 @@ input[type="text"] {
   background-color: black;
   color: #EFEFEF; }
   .carousel-el-preview > * {
-    padding: 0 5%; }
+    padding-left: 5%;
+    padding-right: 5%; }
 
 #carousel-selectors {
   list-style-type: none;
@@ -198,31 +212,20 @@ input[type="text"] {
   #navbar a,
   #navbar a:visited {
     color: #EFEFEF; }
-  #navbar input[type="text"], #navbar #search-icon {
-    color: #EFEFEF;
-    background-color: #3F5765; }
   #navbar input[type="text"] {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-right: 14px; }
-  #navbar #search-icon {
-    height: 26px;
-    display: flex;
-    margin-right: 0;
-    padding-left: 5px;
-    align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px; }
+  #navbar .btn {
+    padding: 2px 8px;
+    border-radius: 5px; }
+  #navbar #login {
+    color: #3F5765; }
+  #navbar #login:hover {
+    color: #E45E2C; }
   #navbar .fa-home,
   #navbar .fa-globe {
     margin-right: 3px; }
-  #navbar #nav-logo {
-    margin-left: auto;
-    margin-right: auto; }
-    #navbar #nav-logo a {
-      font-size: 1.3em; }
-  #navbar #menu-bar {
-    display: none; }
   #navbar .dropdown-content {
     margin-top: 2px;
     display: flex;
@@ -239,6 +242,24 @@ input[type="text"] {
   #navbar .dropdown:hover .dropdown-content a:hover {
     color: #3F5765;
     background-color: rgba(189, 212, 222, 0.6); }
+  #navbar #menu-bar {
+    display: none; }
+  #navbar input[type="text"], #navbar #search-icon {
+    color: #EFEFEF;
+    background-color: #3F5765; }
+  #navbar #search-icon {
+    height: 26px;
+    display: flex;
+    margin-right: 0;
+    padding-left: 5px;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; }
+  #navbar #nav-logo {
+    margin-left: auto;
+    margin-right: auto; }
+    #navbar #nav-logo a {
+      font-size: 1.3em; }
 
 #user-profile {
   padding: 10px 0;

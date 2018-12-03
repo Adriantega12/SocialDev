@@ -48,11 +48,6 @@ $orange: #E45E2C;     // Highlight over dark background
     color: $gray;
   }
 
-  %search {
-    color: $gray;
-    background-color: $blue;
-  }
-
   input[type="text"] {
     @extend %search;
     border-top-left-radius: 0;
@@ -60,31 +55,22 @@ $orange: #E45E2C;     // Highlight over dark background
     margin-right: 14px;
   }
 
-  #search-icon {
-    @extend %search;
-    height: 26px;
-    display: flex;
-    margin-right: 0;
-    padding-left: 5px;
-    align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+  .btn {
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+
+  #login {
+    color: $blue;
+  }
+
+  #login:hover {
+    color: $orange;
   }
 
   .fa-home,
   .fa-globe {
     margin-right: 3px;
-  }
-
-  #nav-logo {
-    @include sides-margin(auto);
-    a {
-      font-size: 1.3em;
-    }
-  }
-
-  #menu-bar {
-    display: none;
   }
 
   .dropdown-content {
@@ -114,5 +100,30 @@ $orange: #E45E2C;     // Highlight over dark background
     }
   }
 
+  #menu-bar {
+    display: none;
+  }
 
+  %search {
+    color: $gray;
+    background-color: $blue;
+  }
+
+  #search-icon {
+    @extend %search;
+    height: 26px;
+    display: flex;
+    margin-right: 0;
+    padding-left: 5px;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  #nav-logo {
+    @include sides-margin(auto);
+    a {
+      font-size: 1.3em;
+    }
+  }
 }

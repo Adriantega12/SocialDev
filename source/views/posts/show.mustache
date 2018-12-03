@@ -34,7 +34,7 @@
     <!-- Rate article -->
     {{#hasSession}}
     <section>
-      <h2>Rate this article</h2>
+      <h2 class="section-title">Rate this article</h2>
       <section>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
@@ -49,7 +49,7 @@
       {{#hasSession}}
       <!-- "Leave a comment" section -->
       <section id="reply-comment">
-        <h2>Leave a comment</h2>
+        <!-- <h2 class="section-title">Leave a comment</h2> -->
         <section class="min-container">
           <img class="avatar-md" src="{{API_HOST}}/{{ppPath}}">
           <div class="summary">
@@ -63,7 +63,7 @@
       {{/hasSession}}
 
       <!-- Comment list starts here -->
-      <h2>Comments</h2>
+      <h2 class="section-title">Comments</h2>
       <ol class="list">
       {{#comments}}
         <li>
