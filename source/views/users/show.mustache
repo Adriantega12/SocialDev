@@ -37,6 +37,7 @@
   </summary>
   {{#hasSession}}
   {{^isOwner}}
+  {{^isFriend}}
   <div class="dropdown">
     <button><i class="fas fa-ellipsis-h"></i></button>
     <ul class="dropdown-content">
@@ -45,6 +46,7 @@
       </form>
     </ul>
   </div>
+  {{/isFriend}}
   {{/isOwner}}
   {{/hasSession}}
 </section>

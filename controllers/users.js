@@ -10,7 +10,10 @@ class UsersController {
       const { status, response: user } = await User.get(req.params.userId);
       const viewFields = {
         ...user,
-        isOwner: res.locals.hasSession ? (user.id === req.session.user.id) : false,
+        isOwner: res.locals.hasSession
+          ? (user.id === req.session.user.id) : false,
+        isFriend: res.locals.hasSession
+          ? (user.friends.find(friend => req.session.user.id === friend.friendId)) : false,
       };
       if (status === 200) {
         res.render('users/show', viewFields);
@@ -65,7 +68,7 @@ class UsersController {
 
   static async createFriendship(req, res, next) {
     try {
-      await User.createFriendship(req.params.userId);
+      await User.createFriendship(req.params.userId, req.cookies[`${process.env.COOKIE_NAME}`]);
       res.redirect(`/users/${req.params.userId}`);
     } catch (error) {
       next(error);
