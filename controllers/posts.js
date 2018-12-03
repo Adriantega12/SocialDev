@@ -7,7 +7,19 @@ class PostsController {
 
   static async getNetworkFeed(req, res, next) {
     try {
-      const { status, response: topPosts } = await Post.getTop();
+      const { status, response } = await Post.getTop();
+      const topPosts = response.map((post, index) => {
+        const viewPost = {
+          index,
+          id: post.id,
+          title: post.title,
+          excerpt: `${post.text.substring(0, 64)}...`,
+          date: post.date,
+          author: post.author,
+        };
+        return viewPost;
+      });
+
 
       if (status === 200) {
         res.render('network', { topPosts });

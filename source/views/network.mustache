@@ -4,26 +4,21 @@
 <main class="main-container">
   <section>
     <h1>Popular on SocialDev</h1>
-    <ol>
+    <ol id="carousel">
       {{#topPosts}}
-      <li>
+      <li class="inactive">
         {{> ./partials/carousel-list-li}}
       </li>
       {{/topPosts}}
-      <ul>
-        <li><input type="radio" name="carousel-select"><span></span></li>
-        <li><input type="radio" name="carousel-select"><span></span></li>
-        <li><input type="radio" name="carousel-select"><span></span></li>
-        <li><input type="radio" name="carousel-select"><span></span></li>
-        <li><input type="radio" name="carousel-select"><span></span></li>
-        <li><input type="radio" name="carousel-select"></li>
-        <li><input type="radio" name="carousel-select"></li>
-        <li><input type="radio" name="carousel-select"></li>
-        <li><input type="radio" name="carousel-select"></li>
-        <li ><input type="radio" name="carousel-select"></li>
+      <ul id="carousel-selectors">
+        <li id="0" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+        <li id="1" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+        <li id="2" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+        <li id="3" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+        <li id="4" class="carousel-selector"><input type="radio" name="carousel-select"></li>
       </ul>
-      <button type="button"><i class="fas fa-angle-left"></i></button>
-      <button type="button"><i class="fas fa-angle-right"></i></button>
+      <button id="left" type="button"><i class="fas fa-angle-left"></i></button>
+      <button id="right" type="button"><i class="fas fa-angle-right"></i></button>
     </ol>
   </section class="module">
 
