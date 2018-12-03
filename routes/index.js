@@ -8,6 +8,10 @@ const postsRoutes = require('./posts');
 
 router.use('/', authRoutes);
 
+router.use('/network', (req, res) => {
+  res.render('network');
+});
+
 router.use('/users', usersRoutes);
 
 router.use('/posts', postsRoutes);
