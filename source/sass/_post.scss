@@ -8,10 +8,7 @@
   box-sizing: border-box;
 }
 
-#post-options {
-  display: flex;
-  justify-content: flex-end;
-
+%dropdown-options {
   .dropdown-content {
     .btn {
       padding: 2px 0;
@@ -23,9 +20,16 @@
   }
 }
 
+#post-options {
+  display: flex;
+  justify-content: flex-end;
+  @extend %dropdown-options;
+}
+
 #comment-section {
   display: flex;
   flex-direction: column;
+  @extend %dropdown-options;
 }
 
 #reply-comment {

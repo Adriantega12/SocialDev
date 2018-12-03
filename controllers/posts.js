@@ -16,6 +16,7 @@ class PostsController {
           excerpt: `${post.text.substring(0, 64)}...`,
           date: post.date,
           author: post.author,
+          random: Math.floor((Math.random() * 12) + 0),
         };
         return viewPost;
       });

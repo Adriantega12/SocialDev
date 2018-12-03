@@ -145,6 +145,7 @@ textarea {
   background-color: black;
   color: #EFEFEF; }
   .carousel-el-preview > * {
+    opacity: 1.0;
     padding-left: 5%;
     padding-right: 5%; }
 
@@ -310,14 +311,16 @@ textarea {
   align-self: center;
   box-sizing: border-box; }
 
+#post-options .dropdown-content .btn, #comment-section .dropdown-content .btn {
+  padding: 2px 0;
+  min-width: 128px; }
+
+#post-options .dropdown-content .btn:hover, #comment-section .dropdown-content .btn:hover {
+  color: #EFEFEF; }
+
 #post-options {
   display: flex;
   justify-content: flex-end; }
-  #post-options .dropdown-content .btn {
-    padding: 2px 0;
-    min-width: 128px; }
-  #post-options .dropdown-content .btn:hover {
-    color: #EFEFEF; }
 
 #comment-section {
   display: flex;

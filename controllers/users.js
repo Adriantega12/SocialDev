@@ -8,6 +8,13 @@ class UsersController {
   static async get(req, res, next) {
     try {
       const { status, response: user } = await User.get(req.params.userId);
+      // Temporal step just to have some visual content
+      user.posts = user.posts.map((post) => {
+        const viewPost = { ...post };
+        viewPost.random = Math.floor((Math.random() * 12) + 0);
+        return viewPost;
+      });
+      // End temporal
       const viewFields = {
         ...user,
         isOwner: res.locals.hasSession

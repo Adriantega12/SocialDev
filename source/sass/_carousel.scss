@@ -52,6 +52,7 @@
   background-color: black;
   color: #EFEFEF;
   > * {
+    opacity: 1.0;
     @include sides-padding(5%);
   }
 }
