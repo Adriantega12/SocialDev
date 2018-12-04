@@ -23,7 +23,7 @@ class AuthController {
       const { status, response } = await api.login(req.body.email, req.body.password);
       if (status === 303) { // Succesfully logged in
         res.cookie(process.env.COOKIE_NAME, response.token.token);
-        res.redirect('/users');
+        res.redirect('/home');
       } else if (status === 400) { // Wrong credentials, try again
         res.redirect('/login');
       }

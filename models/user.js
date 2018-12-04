@@ -71,6 +71,17 @@ class User {
       throw error;
     }
   }
+
+  static async createFriendship(friendId, token) {
+    let data;
+    try {
+      data = await api.insert(`users/friends/${friendId}`, {}, token);
+    } catch (error) {
+      throw error;
+    }
+
+    return data;
+  }
 }
 
 module.exports = User;

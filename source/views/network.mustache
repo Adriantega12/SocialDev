@@ -1,0 +1,37 @@
+{{> ./partials/header}}
+{{> ./partials/navbar}}
+
+<main class="main-container">
+  <section>
+    <h1 class="main-title">Popular on SocialDev</h1>
+    <ol id="carousel">
+      {{#topPosts}}
+      <li class="inactive">
+        {{> ./partials/carousel-list-li}}
+      </li>
+      {{/topPosts}}
+      <ul id="carousel-selectors">
+        <li id="0" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+        <li id="1" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+        <li id="2" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+        <li id="3" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+        <li id="4" class="carousel-selector"><input type="radio" name="carousel-select"></li>
+      </ul>
+      <button id="left" type="button"><i class="fas fa-angle-left"></i></button>
+      <button id="right" type="button"><i class="fas fa-angle-right"></i></button>
+    </ol>
+  </section class="module">
+
+  <!-- <section>
+    <h2 class="section-title">New on SocialDev</h2>
+    <ol class="list">
+      {{#newPosts}}
+      <li>
+        {{> ./partials/post-list-li}}
+      </li>
+      {{/newPosts}}
+    </ol>
+  </section> -->
+</main>
+
+{{> ./partials/footer}}

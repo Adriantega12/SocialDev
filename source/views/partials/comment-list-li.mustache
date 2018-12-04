@@ -7,9 +7,9 @@
       <div class="dropdown">
         <button><i class="fas fa-ellipsis-h"></i></button>
         <ul class="dropdown-content">
-          <button class="edit-comment" data-id="{{commentId}}" type="button">Edit</button>
+          <button class="btn btn-secondary edit-comment" data-id="{{commentId}}" type="button">Edit</button>
           <form action="/posts/{{id}}/comments/{{commentId}}?_method=DELETE" method="POST">
-            <button type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i> Delete</button>
           </form>
         </ul>
       </div>

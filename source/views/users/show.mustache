@@ -17,7 +17,7 @@
       Unkwown
     {{/lastName}}
   </h1>
-  <section id="user-summary">
+  <summary id="user-summary">
     <div class="summary-section">
       <h2>Posts:</h2>
       <p>{{posts.length}}</p>
@@ -28,18 +28,32 @@
     </div>
     <div class="summary-section">
       <h2>Level:</h2>
-      <p>{{#level}}{{/level}}{{^level}}0{{/level}}</p>
+      <p>{{#level}}{{level}}{{/level}}{{^level}}0{{/level}}</p>
     </div>
     <div class="summary-section">
       <h2>Avg. score:</h2>
-      <p>0</p>
+      <p><i class="fas fa-star"></i> 0</p>
     </div>
-  </section>
+  </summary>
+  {{#hasSession}}
+  {{^isOwner}}
+  {{^isFriend}}
+  <div class="dropdown">
+    <button><i class="fas fa-ellipsis-h"></i></button>
+    <ul class="dropdown-content">
+      <form action="/users/{{id}}/friends" method="POST">
+        <button type="submit"><i class="fas fa-user-friends"></i> Add Friend</button>
+      </form>
+    </ul>
+  </div>
+  {{/isFriend}}
+  {{/isOwner}}
+  {{/hasSession}}
 </section>
 
 <main class="main-container">
   <section>
-    <h2>Posts</h2>
+    <h2 class="section-title">Posts</h2>
     <ol class="list">
       {{#posts}}
         <li>

@@ -1,4 +1,6 @@
 #user-profile {
+  padding: 10px 0;
+  color: $gray;
   background-color: $blue;
   display: flex;
   flex-direction: column;
@@ -14,6 +16,11 @@
 .summary-section {
   display: flex;
   flex-direction: column;
+  @include sides-margin(8px);
+
+  h2 {
+    margin-bottom: 4px;
+  }
 }
 
 #user-summary p {

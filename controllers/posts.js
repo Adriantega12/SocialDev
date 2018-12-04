@@ -5,6 +5,56 @@ class PostsController {
     res.send('This was supposed to be a put');
   }
 
+  static async getNetworkFeed(req, res, next) {
+    try {
+      const { status, response } = await Post.getTop();
+      const topPosts = response.map((post, index) => {
+        const viewPost = {
+          index,
+          id: post.id,
+          title: post.title,
+          excerpt: `${post.text.substring(0, 64)}...`,
+          date: post.date,
+          author: post.author,
+          random: Math.floor((Math.random() * 12) + 0), // Temp
+        };
+        return viewPost;
+      });
+
+
+      if (status === 200) {
+        res.render('network', { topPosts });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async getHomeFeed(req, res, next) {
+    try {
+      const { status, response } = await Post.getHomeFeed(req.cookies[`${process.env.COOKIE_NAME}`]);
+      const posts = response.data.map((post, index) => {
+        const viewPost = {
+          index,
+          id: post.id,
+          title: post.title,
+          excerpt: `${post.text.substring(0, 128)}...`,
+          date: post.date,
+          author: post.author,
+          random: Math.floor((Math.random() * 12) + 0), // Temp
+        };
+        return viewPost;
+      });
+
+
+      if (status === 200) {
+        res.render('home', { posts });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
+
   static async get(req, res, next) {
     try {
       const { status, response: post } = await Post.get(req.params.postId);

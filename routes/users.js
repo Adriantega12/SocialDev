@@ -24,4 +24,7 @@ router.put('/:userId', Auth.requireSession, UsersController.update);
 // DESTROY User
 router.delete('/:userId', Auth.requireSession, UsersController.delete);
 
+// Friends
+router.post('/:userId/friends', Auth.requireSession, UsersController.createFriendship);
+
 module.exports = router;

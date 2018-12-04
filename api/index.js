@@ -6,6 +6,30 @@ class API {
     this.host = process.env.API_HOST;
   }
 
+  async getAll(route, token = undefined) {
+    let json;
+    let status;
+
+    try {
+      const response = await fetch(`${this.host}/${route}`, {
+        method: 'get',
+        headers: {
+          token,
+        },
+      });
+      status = await response.status;
+      const jsonPromise = await response.json();
+      json = await jsonPromise;
+    } catch (error) {
+      return error;
+    }
+
+    return {
+      status,
+      response: json,
+    };
+  }
+
   async get(route, id) {
     let json;
     let status;

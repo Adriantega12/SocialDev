@@ -12,9 +12,14 @@
     {{#hasSession}}
       <li><i class="fas fa-envelope"></i></li>
       <li>
-        <a href="{{CLIENT_HOST}}/users/{{sessionUserId}}">
+        <div class="dropdown">
           <img class="avatar-sm" src="{{API_HOST}}/{{ppPath}}">
-        </a>
+          <ul class="dropdown-content">
+            <a class="btn btn-secondary" href="/users/{{sessionUserId}}">Profile</a>
+            <a class="btn btn-secondary" href="/users/{{sessionUserId}}/edit">Settings</a>
+            <a class="btn btn-secondary" href="/logout">Logout</a>
+          </ul>
+        </div>
       </li>
       <li>
         <a href="{{CLIENT_HOST}}/posts/new">
@@ -23,8 +28,8 @@
       </li>
     {{/hasSession}}
     {{^hasSession}}
-      <li><a href="/register">Sign Up</a></li>
-      <li><a href="/login">Sign In</a></li>
+      <li><a id="login" class="btn btn-secondary" href="/login">Sign In</a></li>
+      <li><a class="btn btn-primary" href="/register">Sign Up</a></li>
     {{/hasSession}}
   </ul>
 </header>
