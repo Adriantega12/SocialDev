@@ -2,9 +2,11 @@
 {{> ./partials/navbar}}
 
 <main class="main-container">
-  <section class="main-container module">
-    <h1 class="title main-title">Edit your profile</h1>
-    <form action="/users/{{id}}?_method=PUT" method="POST">
+  <section id="edit-profile">
+    <h1 class="main-title">Edit your profile</h1>
+    <form action="/users/{{id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+      <img class="avatar-xlg" src="{{API_HOST}}/{{profilePic}}">
+      <input type="file" name="user[profilePic]">
       <label for="first-name">First name:</label>
       <input id="first-name" type="text" name="user[firstName]" placeholder="First name" value={{firstName}}>
       <label for="last-name">Last name:</label>
@@ -18,14 +20,14 @@
         <li>
           <span>Add another email address</span>
           <input type="text" name="email" placeholder="name@example.com">
-          <button class="btn btn-primary" type="submit">Add Email</button>
+          <button class="btn-primary" type="submit">Add Email</button>
         </li>
       </ul>
-      <button class="btn btn-primary" type="submit">Submit changes</button>
-      <a class="btn btn-secondary" href="/users/{{id}}">Cancel</a>
+      <button class="btn-primary" type="submit">Submit changes</button>
+      <a class="btn-secondary" href="/users/{{id}}">Cancel</a>
     </form>
     <form action="/users/{{id}}?_method=DELETE" method="POST">
-      <button class="btn btn-danger" type="submit">Delete account</button>
+      <button class="btn-danger" type="submit">Delete account</button>
     </form>
   </section>
 </main>

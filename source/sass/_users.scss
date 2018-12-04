@@ -26,3 +26,8 @@
 #user-summary p {
   align-self: center;
 }
+
+#edit-profile > form {
+  display: flex;
+  flex-direction: column;
+}

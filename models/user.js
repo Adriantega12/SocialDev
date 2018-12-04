@@ -55,6 +55,7 @@ class User {
 
   static async update(keyVals, token) {
     let data;
+    console.log(keyVals);
     try {
       data = await api.update('users', keyVals, keyVals.id, token);
     } catch (error) {

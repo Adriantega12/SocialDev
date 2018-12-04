@@ -1,13 +1,22 @@
 %input-text {
   border: 0;
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 9px 15px;
 }
 
 input[type="text"] {
   @extend %input-text;
 }
 
+input[type="password"] {
+  @extend %input-text;
+}
+
+input[type="email"] {
+  @extend %input-text;
+}
+
 textarea {
+  @extend %input-text;
   resize: none;
 }

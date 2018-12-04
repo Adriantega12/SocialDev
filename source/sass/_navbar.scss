@@ -15,7 +15,7 @@ $orange: #E45E2C;     // Highlight over dark background
 
 #navbar {
   // Sizes
-  height: 46px;
+  min-height: 46px;
   // Font
   font-weight: 700;
   // Colors
@@ -104,6 +104,16 @@ $orange: #E45E2C;     // Highlight over dark background
     align-items: center;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+  }
+
+  #search-bar {
+    input {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 8px;
+    }
   }
 
   #nav-logo {

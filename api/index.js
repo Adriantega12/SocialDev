@@ -70,6 +70,7 @@ class API {
   }
 
   async update(route, body, id, token = undefined) {
+    console.log(body);
     const response = await fetch(`${this.host}/${route}/${id}`, {
       method: 'put',
       body: new URLSearchParams(body),
