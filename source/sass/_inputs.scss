@@ -4,15 +4,7 @@
   padding: 9px 15px;
 }
 
-input[type="text"] {
-  @extend %input-text;
-}
-
-input[type="password"] {
-  @extend %input-text;
-}
-
-input[type="email"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="file"] {
   @extend %input-text;
 }
 

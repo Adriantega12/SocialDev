@@ -50,7 +50,10 @@ class UsersController {
   }
 
   static async update(req, res, next) {
-    console.log(req.body);
+    if (req.file) {
+      console.log(req.file);
+    }
+
     try {
       const { status, response: user } = await User.update({
         id: req.params.userId,

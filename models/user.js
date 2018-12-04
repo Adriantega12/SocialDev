@@ -41,21 +41,8 @@ class User {
     return data;
   }
 
-  /*static async insert(user) {
-    let data;
-
-    try {
-      data = await api.insert('users', user);
-    } catch (error) {
-      throw error;
-    }
-
-    return data;
-  }*/
-
   static async update(keyVals, token) {
     let data;
-    console.log(keyVals);
     try {
       data = await api.update('users', keyVals, keyVals.id, token);
     } catch (error) {
