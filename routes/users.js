@@ -1,10 +1,10 @@
 const { Router } = require('express');
-const multer = require('multer');
+//const multer = require('multer');
 const { UsersController } = require('../controllers');
 const { Auth } = require('../middlewares');
 
 const router = Router();
-const upload = multer({ dest: 'tmp/' });
+//const upload = multer({ dest: 'tmp/' });
 
 // INDEX User
 router.get('/', UsersController.getAll);
