@@ -1,0 +1,15 @@
+@mixin sides-padding($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin sides-margin($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin avatar-dimensions($value) {
+  min-width: $value;
+  width: $value;
+  height: $value;
+}

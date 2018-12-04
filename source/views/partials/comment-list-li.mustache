@@ -1,0 +1,29 @@
+<article class="min-container">
+  <img class="avatar-md" src="{{API_HOST}}/{{ppPath}}">
+  <div class="summary">
+    <div class="comment-header">
+      <h3>{{author}}</h3>
+      {{#sessionOwns}}
+      <div class="dropdown">
+        <button><i class="fas fa-ellipsis-h"></i></button>
+        <ul class="dropdown-content">
+          <button class="btn btn-secondary edit-comment" data-id="{{commentId}}" type="button">Edit</button>
+          <form action="/posts/{{id}}/comments/{{commentId}}?_method=DELETE" method="POST">
+            <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i> Delete</button>
+          </form>
+        </ul>
+      </div>
+      {{/sessionOwns}}
+    </div>
+    <p>{{content}}</p>
+    {{#sessionOwns}}
+    <form id="edit{{commentId}}" class="inactive" action="/posts/{{id}}/comments/{{commentId}}?_method=PUT" method="POST">
+      <textarea name="comment[content]">{{content}}</textarea>
+      <button type="submit">Submit changes</button>
+    </form>
+    {{/sessionOwns}}
+  </div>
+
+
+  <!-- -->
+</article>

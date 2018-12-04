@@ -1,0 +1,35 @@
+</head>
+<body>
+
+<header id="navbar">
+  <ul class="main-container">
+    <li id="menu-bar"><i class="fas fa-bars"></i></li>
+    <li><a href="/home"><i class="fas fa-home"></i>Home</li>
+    <li><a href="/network"><i class="fas fa-globe"></i>Network</a></li>
+    <li id="nav-logo"><a href="/">{SD}</a></li>
+    <li id="search-icon"><i class="fas fa-search"></i></li>
+    <li id="search-bar"><input type="text" name="search" placeholder="Search"></li>
+    {{#hasSession}}
+      <li><i class="fas fa-envelope"></i></li>
+      <li>
+        <div class="dropdown">
+          <img class="avatar-sm" src="{{API_HOST}}/{{ppPath}}">
+          <ul class="dropdown-content">
+            <a class="btn btn-secondary" href="/users/{{sessionUserId}}">Profile</a>
+            <a class="btn btn-secondary" href="/users/{{sessionUserId}}/edit">Settings</a>
+            <a class="btn btn-secondary" href="/logout">Logout</a>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a href="{{CLIENT_HOST}}/posts/new">
+          <i class="fas fa-plus"></i>
+        </a>
+      </li>
+    {{/hasSession}}
+    {{^hasSession}}
+      <li><a id="login" class="btn btn-secondary" href="/login">Sign In</a></li>
+      <li><a class="btn btn-primary" href="/register">Sign Up</a></li>
+    {{/hasSession}}
+  </ul>
+</header>

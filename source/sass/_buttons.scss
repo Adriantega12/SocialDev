@@ -1,0 +1,30 @@
+%btn {
+  cursor: pointer;
+}
+
+.btn-primary {
+  @extend %btn;
+  color: $gray;
+  background-color: $blue;
+}
+
+.btn-secondary {
+  @extend %btn;
+  color: $dark-blue;
+  background-color: $gray;
+}
+
+.btn-secondary:hover {
+  color: $gray;
+  background-color: rgba($blue, 0.8);
+}
+
+.btn-danger {
+  @extend %btn;
+  color: $gray;
+  background-color: $danger-red;
+}
+
+.btn-danger:hover {
+  background-color: $danger-red-hl;
+}

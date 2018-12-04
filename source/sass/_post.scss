@@ -1,0 +1,44 @@
+#post-content {
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+#author-sum {
+  align-self: center;
+  box-sizing: border-box;
+}
+
+%dropdown-options {
+  .dropdown-content {
+    .btn {
+      padding: 2px 0;
+      min-width: 128px;
+    }
+    .btn:hover {
+      color: $gray;
+    }
+  }
+}
+
+#post-options {
+  display: flex;
+  justify-content: flex-end;
+  @extend %dropdown-options;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction: column;
+  @extend %dropdown-options;
+}
+
+#reply-comment {
+  align-self: center;
+  justify-content: center;
+  width: 50%;
+}
+
+#reply-comment .summary form {
+  display: flex;
+  flex-direction: column;
+}

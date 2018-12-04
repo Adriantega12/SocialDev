@@ -1,0 +1,70 @@
+// Color palette
+// - Dark blue:  #2B3A42 rgb(43,58,66)
+// - Blue:       #3F5765 rgb(63,87,101)
+// - Light blue: #BDD4DE rgb(189,212,222)
+// - Gray-ish:   #EFEFEF rgb(239,239,239)
+// - Orange:     #E45E2C rgb(228,94,44)
+$dark-blue: #2B3A42;  // Navbar background
+$blue: #3F5765;
+$light-blue: #BDD4DE;
+$gray: #EFEFEF;       // Body background
+$orange: #E45E2C;     // Highlight over dark background
+$danger-red: #FF4C4C; // Danger
+$danger-red-hl: #FF0202;
+
+@import 'mixins';
+@import 'containers';
+@import 'images';
+@import 'inputs';
+@import 'buttons';
+@import 'titles';
+@import 'dropdowns';
+@import 'carousel';
+@import 'lists';
+@import 'navbar';
+@import 'users';
+@import 'post';
+@import 'comments';
+
+// Support for older browsers
+header, section, footer, aside, nav, main, article, figure {
+  display: block;
+}
+
+// Styles for all pages
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background: $gray;
+}
+
+main {
+  color: $blue;
+  display: flex;
+  flex-direction: column;
+}
+
+a,
+a:visited {
+  color: $blue;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.date {
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+}
+
+.inactive {
+  display: none;
+}
