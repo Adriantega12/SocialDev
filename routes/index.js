@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const { PostsController } = require('../controllers');
+const { Auth } = require('../middlewares');
 
 const router = Router();
 
@@ -10,6 +11,8 @@ const postsRoutes = require('./posts');
 router.use('/', authRoutes);
 
 router.use('/network', PostsController.getNetworkFeed);
+
+router.use('/home', Auth.requireSession, PostsController.getHomeFeed);
 
 router.use('/users', usersRoutes);
 

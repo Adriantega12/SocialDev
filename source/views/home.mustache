@@ -1,0 +1,22 @@
+{{> ./partials/header}}
+{{> ./partials/navbar}}
+
+<main class="main-container">
+  <section>
+    <h2 class="section-title">Home</h2>
+    {{#posts.length}}
+    <ol class="list">
+      {{#posts}}
+      <li>
+        {{> ./partials/post-list-li}}
+      </li>
+      {{/posts}}
+    </ol>
+    {{/posts.length}}
+    {{^posts}}
+    <p>Seems like your friends haven't posted anything yet.</p>
+    {{/posts}}
+  </section>
+</main>
+
+{{> ./partials/footer}}

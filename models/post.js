@@ -33,6 +33,18 @@ class Post {
     return data;
   }
 
+  static async getHomeFeed(token) {
+    let data;
+
+    try {
+      data = await api.getAll('users/feed', token);
+    } catch (error) {
+      throw error;
+    }
+
+    return data;
+  }
+
   static async get(postId) {
     let data;
 
