@@ -18,6 +18,7 @@
 .btn-secondary {
   @extend %btn;
   color: $dark-blue;
+  border: 1px solid rgba(black, 0.4);
   background-color: $gray;
 }
 

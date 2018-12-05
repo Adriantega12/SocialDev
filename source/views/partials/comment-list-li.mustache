@@ -1,5 +1,10 @@
 <article class="min-container">
+  {{#ppPath}}
   <img class="avatar-md" src="{{API_HOST}}/{{ppPath}}">
+  {{/ppPath}}
+  {{^ppPath}}
+  <img class="avatar-md" src="/assets/placeholder/blank-pp.png">
+  {{/ppPath}}
   <div class="summary">
     <div class="comment-header">
       <h3>{{author}}</h3>

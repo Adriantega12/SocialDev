@@ -6,11 +6,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .dropdown {
+    > button {
+      color: $gray;
+    }
+
+    form {
+      > button {
+        width: 160px;
+        border: none;
+        border-radius: 0;
+      }
+    }
+  }
 }
 
 #user-summary {
   display: flex;
-  align-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .summary-section {
@@ -27,7 +42,16 @@
   align-self: center;
 }
 
-#edit-profile > form {
-  display: flex;
-  flex-direction: column;
+#edit-profile {
+  > form {
+    display: flex;
+    flex-direction: column;
+    > * {
+      margin-bottom: 8px;
+    }
+
+    .btn-secondary {
+      text-align: center;
+    }
+  }
 }

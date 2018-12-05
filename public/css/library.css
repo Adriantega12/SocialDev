@@ -68,6 +68,7 @@ textarea {
 
 .btn-secondary {
   color: #2B3A42;
+  border: 1px solid rgba(0, 0, 0, 0.4);
   background-color: #EFEFEF; }
 
 .btn-secondary:hover {
@@ -81,13 +82,18 @@ textarea {
 .btn-danger:hover {
   background-color: #FF0202; }
 
-.main-title, .section-title {
+.main-title, .section-title, .message {
   margin: 16px 0; }
 
 .main-title {
   font-size: 1.8em; }
 
 .section-title {
+  font-size: 1.3em; }
+
+.message {
+  align-self: center;
+  color: rgba(0, 0, 0, 0.5);
   font-size: 1.3em; }
 
 .dropdown {
@@ -262,6 +268,7 @@ textarea {
     #navbar .dropdown-content .btn {
       color: #3F5765;
       padding: 2px 0;
+      border: none;
       border-radius: 0;
       min-width: 128px; }
     #navbar .dropdown-content .btn:hover {
@@ -299,10 +306,17 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center; }
+  #user-profile .dropdown > button {
+    color: #EFEFEF; }
+  #user-profile .dropdown form > button {
+    width: 160px;
+    border: none;
+    border-radius: 0; }
 
 #user-summary {
   display: flex;
-  align-content: space-around; }
+  justify-content: center;
+  flex-wrap: wrap; }
 
 .summary-section {
   display: flex;
@@ -318,6 +332,10 @@ textarea {
 #edit-profile > form {
   display: flex;
   flex-direction: column; }
+  #edit-profile > form > * {
+    margin-bottom: 8px; }
+  #edit-profile > form .btn-secondary {
+    text-align: center; }
 
 #post-content {
   text-align: justify;
@@ -330,7 +348,9 @@ textarea {
 
 #post-options .dropdown-content .btn, #comment-section .dropdown-content .btn {
   padding: 2px 0;
-  min-width: 128px; }
+  min-width: 128px;
+  border: none;
+  border-radius: 0; }
 
 #post-options .dropdown-content .btn:hover, #comment-section .dropdown-content .btn:hover {
   color: #EFEFEF; }
@@ -372,7 +392,6 @@ textarea {
       width: 280px;
       border-radius: 5px; }
     #sign-form form .btn-secondary {
-      border: 1px solid black;
       text-align: center;
       width: 260px; }
     #sign-form form input {

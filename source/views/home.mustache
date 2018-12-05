@@ -3,7 +3,7 @@
 
 <main class="main-container">
   <section>
-    <h2 class="section-title">Home</h2>
+    <h2 class="main-title">Home</h2>
     {{#posts.length}}
     <ol class="list">
       {{#posts}}
@@ -14,7 +14,7 @@
     </ol>
     {{/posts.length}}
     {{^posts}}
-    <p>Seems like your friends haven't posted anything yet.</p>
+    <p class="message">Seems like your friends haven't posted anything yet. :(</p>
     {{/posts}}
   </section>
 </main>
