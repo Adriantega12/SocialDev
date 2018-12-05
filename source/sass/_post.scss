@@ -71,8 +71,15 @@
       display: flex;
       justify-content: space-around;
       .btn {
-        @include sides-margin(10px);
         width: 100%;
+      }
+
+      .btn:first-child {
+        margin-right: 5px;
+      }
+
+      .btn:last-child {
+        margin-left: 5px;
       }
     }
   }

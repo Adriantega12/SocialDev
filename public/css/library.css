@@ -385,9 +385,11 @@ textarea {
   display: flex;
   justify-content: space-around; }
   #create-post > form #submit-post .btn {
-    margin-left: 10px;
-    margin-right: 10px;
     width: 100%; }
+  #create-post > form #submit-post .btn:first-child {
+    margin-right: 5px; }
+  #create-post > form #submit-post .btn:last-child {
+    margin-left: 5px; }
 
 .comment-header {
   display: flex;
