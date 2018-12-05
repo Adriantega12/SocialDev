@@ -16,8 +16,7 @@
       <img class="avatar-lg" src="/assets/placeholder/blank-pp.png">
       {{/author.profilePic}}
       <div class="summary">
-        <h2>{{#author.firstName}}{{author.firstName}}{{/author.firstName}}{{^author.firstName}}Mr.{{/author.firstName}} {{#author.lastName}}{{author.lastName}}{{/author.lastName}}{{^author.lastName}}Unknown{{/author.lastName}}</h2>
-        <p>Level: <span>{{author.level}}</span></p>
+        <h2><a href="/users/{{userId}}">{{#author.firstName}}{{author.firstName}}{{/author.firstName}}{{^author.firstName}}Mr.{{/author.firstName}} {{#author.lastName}}{{author.lastName}}{{/author.lastName}}{{^author.lastName}}Unknown{{/author.lastName}}</a></h2>
         <p class="date">Published on: {{date}}</p>
       </div>
     </article>

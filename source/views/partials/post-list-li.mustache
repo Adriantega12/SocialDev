@@ -3,14 +3,19 @@
   <img class="post-preview" src="/assets/{{random}}.jpeg">
   <div class="summary">
     <a href="/posts/{{id}}"><h3>{{title}}</h3></a>
-    <article>
-      <p>{{excerpt}}</p>
-    </article>
-    <section class="date">
-      {{date}}
-    </section>
+    <p>{{excerpt}}</p>
+    <p>
+      Author: <a href="/users/{{userId}}" class="author">
+      {{#author}}
+        {{author}}
+      {{/author}}
+      {{^author}}
+        Mr. Unknwon
+      {{/author}}</a>
+    </p>
+    <p class="date">{{date}}</p>
     <section>
-      <p><i class="fas fa-star"></i> {{^score}}0{{/score}}{{score}}</p>
+      <p><i class="fas fa-star"></i> {{score}}</p>
     </section>
   </div>
 </article>
