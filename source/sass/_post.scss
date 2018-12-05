@@ -44,7 +44,36 @@
   }
 }
 
-#reply-comment .summary form {
-  display: flex;
-  flex-direction: column;
+#reply-comment {
+  .summary {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+#create-post {
+  > form {
+    > * {
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      height: 20em;
+    }
+
+    .btn-secondary {
+      text-align: center;
+    }
+
+    #submit-post {
+      display: flex;
+      justify-content: space-around;
+      .btn {
+        @include sides-margin(10px);
+        width: 100%;
+      }
+    }
+  }
 }

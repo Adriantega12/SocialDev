@@ -9,7 +9,7 @@
       <input type="file" name="profilePic">
       <button class="btn-primary" type="submit">Upload</button>
     </form> -->
-    <form action="/users/{{id}}?_method=PUT" method="POST">
+    <form class="form" action="/users/{{id}}?_method=PUT" method="POST">
       <label for="first-name">First name:</label>
       <input id="first-name" type="text" name="user[firstName]" placeholder="First name" value={{firstName}}>
       <label for="last-name">Last name:</label>

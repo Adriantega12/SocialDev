@@ -5,10 +5,11 @@
   align-items: center;
   justify-content: center;
 
-  form {
-    display: flex;
-    flex-direction: column;
+  h1 {
+    text-align: center;
+  }
 
+  form {
     .btn {
       padding: 7px 10px;
       width: 280px;
