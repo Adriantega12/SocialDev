@@ -9,7 +9,7 @@ const usersRoutes = require('./users');
 const postsRoutes = require('./posts');
 
 router.get('/', (req, res) => {
-  res.redirect('/login');
+  res.render('index');
 });
 
 router.use('/', authRoutes);

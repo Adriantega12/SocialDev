@@ -436,6 +436,16 @@ textarea {
   #sign-form form * {
     margin-bottom: 8px; }
 
+#landing {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  color: #EFEFEF;
+  background-color: #2B3A42;
+  font-size: 2em; }
+
 header, section, footer, aside, nav, main, article, figure {
   display: block; }
 
