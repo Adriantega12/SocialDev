@@ -13,7 +13,12 @@
       <li><i class="fas fa-envelope"></i></li>
       <li>
         <div class="dropdown">
+          {{#ppPath}}
           <img class="avatar-sm" src="{{API_HOST}}/{{ppPath}}">
+          {{/ppPath}}
+          {{^ppPath}}
+          <img class="avatar-sm" src="/assets/placeholder/blank-pp.png">
+          {{/ppPath}}
           <ul class="dropdown-content">
             <a class="btn btn-secondary" href="/users/{{sessionUserId}}">Profile</a>
             <a class="btn btn-secondary" href="/users/{{sessionUserId}}/edit">Settings</a>
@@ -22,7 +27,7 @@
         </div>
       </li>
       <li>
-        <a href="{{CLIENT_HOST}}/posts/new">
+        <a href="/posts/new">
           <i class="fas fa-plus"></i>
         </a>
       </li>

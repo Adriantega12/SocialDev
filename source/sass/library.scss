@@ -25,6 +25,8 @@ $danger-red-hl: #FF0202;
 @import 'users';
 @import 'post';
 @import 'comments';
+@import 'forms';
+@import 'sign-form';
 
 // Support for older browsers
 header, section, footer, aside, nav, main, article, figure {
@@ -37,6 +39,13 @@ header, section, footer, aside, nav, main, article, figure {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 body {

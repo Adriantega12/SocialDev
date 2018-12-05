@@ -1,13 +1,14 @@
 %input-text {
   border: 0;
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 9px 15px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="file"] {
   @extend %input-text;
 }
 
 textarea {
+  @extend %input-text;
   resize: none;
 }
