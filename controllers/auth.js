@@ -14,6 +14,19 @@ class AuthController {
     }
   }
 
+  static async confirm(req, res, next) {
+    try {
+      const { status, response } = await api.get('auth/register', req.params.token);
+      if (status === 202) {
+        const { user, token } = response.data;
+        res.cookie(process.env.COOKIE_NAME, token.token);
+        res.redirect(`/users/${user.id}/edit`);
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
+
   static async recover(req, res, next) {
 
   }

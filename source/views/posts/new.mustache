@@ -2,16 +2,16 @@
 {{> ./partials/navbar}}
 
 <main class="main-container">
-  <section class="module main-container">
-    <h1 class="title main-title">Create a new post for SocialDev</h1>
+  <section id="create-post-form">
+    <h1 class="main-title">Create a new post for SocialDev</h1>
     <form class="post-form" action="/posts" method="POST">
-      <label class="title section-title" for="post-title">Post title:</label>
-      <input class="text-input" id="post-title" type="text" name="title" placeholder="Post title">
-      <label class="title section-title" for="post-content">Content:</label>
-      <textarea class="text-input" id="post-content" name="text" placeholder="Write your post content here..."></textarea>
+      <label class="section-title" for="post-title">Post title:</label>
+      <input id="post-title" type="text" name="title" placeholder="Post title">
+      <label section-title" for="post-content">Content:</label>
+      <textarea id="post-content" name="text" placeholder="Write your post content here..."></textarea>
       <div class="post-submission">
-        <button class="btn btn-primary" type="submit">Publish</button>
-        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn-secondary">Cancel</button>
+        <button class="btn-primary" type="submit">Publish</button>
       </div>
     </form>
   </section>
