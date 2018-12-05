@@ -1,6 +1,7 @@
 #post-content {
   text-align: justify;
   line-height: 1.5em;
+  margin-bottom: 16px;
 }
 
 #author-sum {
@@ -36,6 +37,9 @@
   align-self: center;
   justify-content: center;
   width: 50%;
+  button {
+    margin-top: 8px;
+  }
 }
 
 #reply-comment .summary form {

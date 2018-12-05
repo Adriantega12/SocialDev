@@ -54,6 +54,8 @@ textarea {
   resize: none; }
 
 .btn-primary, .btn-secondary, .btn-danger {
+  border-radius: 5px;
+  padding: 7px 10px;
   cursor: pointer; }
 
 .btn-primary {
@@ -319,7 +321,8 @@ textarea {
 
 #post-content {
   text-align: justify;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  margin-bottom: 16px; }
 
 #author-sum {
   align-self: center;
@@ -344,6 +347,8 @@ textarea {
   align-self: center;
   justify-content: center;
   width: 50%; }
+  #reply-comment button {
+    margin-top: 8px; }
 
 #reply-comment .summary form {
   display: flex;
