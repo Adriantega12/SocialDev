@@ -394,6 +394,18 @@ textarea {
   #create-post > form #submit-post .btn:last-child {
     margin-left: 5px; }
 
+#score {
+  padding-left: 16px; }
+  #score .unchecked {
+    opacity: 0.5; }
+
+.edit-comment-form {
+  display: flex;
+  flex-direction: column; }
+  .edit-comment-form textarea {
+    margin-top: 8px;
+    margin-bottom: 8px; }
+
 .comment-header {
   display: flex;
   justify-content: space-between; }

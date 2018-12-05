@@ -84,3 +84,21 @@
     }
   }
 }
+
+#score {
+  padding-left: 16px;
+
+  .unchecked {
+    opacity: 0.5;
+  }
+}
+
+.edit-comment-form {
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
