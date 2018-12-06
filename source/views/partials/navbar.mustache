@@ -4,7 +4,9 @@
 <header id="navbar">
   <ul class="main-container">
     <li id="menu-bar"><i class="fas fa-bars"></i></li>
+    {{#hasSession}}
     <li><a href="/home"><i class="fas fa-home"></i>Home</li>
+    {{/hasSession}}
     <li><a href="/network"><i class="fas fa-globe"></i>Network</a></li>
     <li id="nav-logo"><a href="/">{SD}</a></li>
     <li id="search-icon"><i class="fas fa-search"></i></li>

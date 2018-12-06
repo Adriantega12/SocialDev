@@ -12,10 +12,12 @@ class PostsController {
         const viewPost = {
           index,
           id: post.id,
+          userId: post.userId,
           title: post.title,
           excerpt: `${post.text.substring(0, 64)}...`,
           date: post.date,
-          author: post.author,
+          author: post.author === 'null null'
+            ? undefined : post.author,
           random: Math.floor((Math.random() * 12) + 0), // Temp
         };
         return viewPost;
@@ -40,10 +42,12 @@ class PostsController {
           const viewPost = {
             index,
             id: post.id,
+            userId: post.userId,
             title: post.title,
             excerpt: `${post.text.substring(0, 128)}...`,
             date: post.date,
-            author: post.author,
+            author: post.author === 'null null'
+              ? undefined : post.author,
             random: Math.floor((Math.random() * 12) + 0), // Temp
           };
           return viewPost;
@@ -62,6 +66,8 @@ class PostsController {
       if (status === 200) {
         const { response: author } = await User.get(post.userId);
         post.comments.forEach((comment) => {
+          comment.author = comment.author === 'null null'
+            ? undefined : comment.author;
           comment.sessionOwns = res.locals.hasSession
             ? comment.userId === req.session.user.id : false;
         });
@@ -125,7 +131,7 @@ class PostsController {
   static async delete(req, res, next) {
     try {
       await Post.delete(req.params.postId, req.cookies[`${process.env.COOKIE_NAME}`]);
-      res.redirect('/posts');
+      res.redirect(`/users/${req.session.user.id}`);
     } catch (error) {
       next(error);
     }

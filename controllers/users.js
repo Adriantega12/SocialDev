@@ -15,6 +15,11 @@ class UsersController {
         return viewPost;
       });
       // End temporal
+      user.posts.forEach(post => {
+        if (post.author === 'null null') {
+          post.author = undefined;
+        }
+      });
       const viewFields = {
         ...user,
         isOwner: res.locals.hasSession
