@@ -4,9 +4,6 @@ const { Auth } = require('../middlewares');
 
 const router = Router();
 
-// INDEX User
-router.get('/', UsersController.getAll);
-
 // CREATE User view
 router.get('/new', (req, res) => {
   res.redirect('/register');

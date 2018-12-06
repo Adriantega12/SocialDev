@@ -11,6 +11,9 @@ router.get('/register', (req, res) => {
 // Register user
 router.post('/register', AuthController.register);
 
+// Confirm user
+router.get('/register/:token', AuthController.confirm);
+
 // Recover password view
 router.get('/recover', (req, res) => {
 

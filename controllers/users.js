@@ -15,6 +15,11 @@ class UsersController {
         return viewPost;
       });
       // End temporal
+      user.posts.forEach(post => {
+        if (post.author === 'null null') {
+          post.author = undefined;
+        }
+      });
       const viewFields = {
         ...user,
         isOwner: res.locals.hasSession
@@ -50,6 +55,10 @@ class UsersController {
   }
 
   static async update(req, res, next) {
+    if (req.file) {
+      console.log(req.file);
+    }
+
     try {
       const { status, response: user } = await User.update({
         id: req.params.userId,

@@ -12,10 +12,12 @@ class PostsController {
         const viewPost = {
           index,
           id: post.id,
+          userId: post.userId,
           title: post.title,
           excerpt: `${post.text.substring(0, 64)}...`,
           date: post.date,
-          author: post.author,
+          author: post.author === 'null null'
+            ? undefined : post.author,
           random: Math.floor((Math.random() * 12) + 0), // Temp
         };
         return viewPost;
@@ -33,23 +35,25 @@ class PostsController {
   static async getHomeFeed(req, res, next) {
     try {
       const { status, response } = await Post.getHomeFeed(req.cookies[`${process.env.COOKIE_NAME}`]);
-      const posts = response.data.map((post, index) => {
-        const viewPost = {
-          index,
-          id: post.id,
-          title: post.title,
-          excerpt: `${post.text.substring(0, 128)}...`,
-          date: post.date,
-          author: post.author,
-          random: Math.floor((Math.random() * 12) + 0), // Temp
-        };
-        return viewPost;
-      });
+      let posts = [];
 
-
-      if (status === 200) {
-        res.render('home', { posts });
+      if (response) {
+        posts = response.data.map((post, index) => {
+          const viewPost = {
+            index,
+            id: post.id,
+            userId: post.userId,
+            title: post.title,
+            excerpt: `${post.text.substring(0, 128)}...`,
+            date: post.date,
+            author: post.author === 'null null'
+              ? undefined : post.author,
+            random: Math.floor((Math.random() * 12) + 0), // Temp
+          };
+          return viewPost;
+        });
       }
+      res.render('home', { posts });
     } catch (error) {
       next(error);
     }
@@ -62,6 +66,8 @@ class PostsController {
       if (status === 200) {
         const { response: author } = await User.get(post.userId);
         post.comments.forEach((comment) => {
+          comment.author = comment.author === 'null null'
+            ? undefined : comment.author;
           comment.sessionOwns = res.locals.hasSession
             ? comment.userId === req.session.user.id : false;
         });
@@ -125,7 +131,7 @@ class PostsController {
   static async delete(req, res, next) {
     try {
       await Post.delete(req.params.postId, req.cookies[`${process.env.COOKIE_NAME}`]);
-      res.redirect('/posts');
+      res.redirect(`/users/${req.session.user.id}`);
     } catch (error) {
       next(error);
     }

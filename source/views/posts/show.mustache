@@ -5,14 +5,19 @@
     <article>
       <h1 class="main-title">{{title}}</h1>
       <article id="post-content">{{text}}</article>
+      <!-- <p>Score for this post: <i class="checked fas fa-star"></i> {{score}}</p> -->
     </article>
 
     <!-- Author description -->
     <article id="author-sum" class="min-container">
+      {{#author.profilePic}}
       <img class="avatar-lg" src="{{API_HOST}}/{{author.profilePic}}">
+      {{/author.profilePic}}
+      {{^author.profilePic}}
+      <img class="avatar-lg" src="/assets/placeholder/blank-pp.png">
+      {{/author.profilePic}}
       <div class="summary">
-        <h2>{{author.firstName}} {{author.lastName}}</h2>
-        <p>Level: <span>{{author.level}}</span></p>
+        <h2><a href="/users/{{userId}}">{{#author.firstName}}{{author.firstName}}{{/author.firstName}}{{^author.firstName}}Mr.{{/author.firstName}} {{#author.lastName}}{{author.lastName}}{{/author.lastName}}{{^author.lastName}}Unknown{{/author.lastName}}</a></h2>
         <p class="date">Published on: {{date}}</p>
       </div>
     </article>
@@ -35,14 +40,14 @@
 
     <!-- Rate article -->
     {{#hasSession}}
-    <section>
+    <section id="score">
       <h2 class="section-title">Rate this article</h2>
-      <section>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
+      <section id="score-stars">
+        <i class="star unchecked fas fa-star" data-score="1"></i>
+        <i class="star unchecked fas fa-star" data-score="2"></i>
+        <i class="star unchecked fas fa-star" data-score="3"></i>
+        <i class="star unchecked fas fa-star" data-score="4"></i>
+        <i class="star unchecked fas fa-star" data-score="5"></i>
       </section>
     </section>
     {{/hasSession}}
@@ -51,13 +56,17 @@
       {{#hasSession}}
       <!-- "Leave a comment" section -->
       <section id="reply-comment">
-        <!-- <h2 class="section-title">Leave a comment</h2> -->
         <section class="min-container">
+          {{#ppPath}}
           <img class="avatar-md" src="{{API_HOST}}/{{ppPath}}">
+          {{/ppPath}}
+          {{^ppPath}}
+          <img class="avatar-md" src="/assets/placeholder/blank-pp.png">
+          {{/ppPath}}
           <div class="summary">
             <form action="/posts/{{id}}/comments" method="POST">
               <textarea name="comment[content]">{{content}}</textarea>
-              <button type="submit">Leave a comment!</button>
+              <button class="btn-primary" type="submit">Leave a comment!</button>
             </form>
           </div>
         </section>
@@ -67,13 +76,20 @@
       <!-- Comment list starts here -->
       <h2 class="section-title">Comments</h2>
       <ol class="list">
+      <script type="template/text">
+        {{> ./partials/comment-list-li}}
+      </script>
       {{#comments}}
         <li>
         {{> ./partials/comment-list-li}}
         </li>
       {{/comments}}
+      {{^comments}}
+        <p class="message">Seems like there are no comments in this post... Yet!</p>
+      {{/comments}}
       </ol>
     </section>
   </main>
 
+  <script type="text/javascript" src="/js/show-post.js"></script>
 {{> ./partials/footer}}

@@ -1,4 +1,6 @@
 %btn {
+  border-radius: 5px;
+  padding: 7px 10px;
   cursor: pointer;
 }
 
@@ -8,9 +10,15 @@
   background-color: $blue;
 }
 
+.btn-primary:hover {
+  color: $dark-blue;
+  background-color: rgba($blue, 0.8);
+}
+
 .btn-secondary {
   @extend %btn;
   color: $dark-blue;
+  border: 1px solid rgba(black, 0.4);
   background-color: $gray;
 }
 

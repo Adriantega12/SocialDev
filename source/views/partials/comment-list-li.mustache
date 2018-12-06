@@ -1,14 +1,24 @@
 <article class="min-container">
+  {{#ppPath}}
   <img class="avatar-md" src="{{API_HOST}}/{{ppPath}}">
+  {{/ppPath}}
+  {{^ppPath}}
+  <img class="avatar-md" src="/assets/placeholder/blank-pp.png">
+  {{/ppPath}}
   <div class="summary">
     <div class="comment-header">
-      <h3>{{author}}</h3>
+      <h3>
+        <a href="/users/{{userId}}">
+          {{#author}}{{author}}{{/author}}{{^author}}Mr. Unknwon{{/author}}
+        </a>
+      </h3>
       {{#sessionOwns}}
       <div class="dropdown">
         <button><i class="fas fa-ellipsis-h"></i></button>
         <ul class="dropdown-content">
           <button class="btn btn-secondary edit-comment" data-id="{{commentId}}" type="button">Edit</button>
           <form action="/posts/{{id}}/comments/{{commentId}}?_method=DELETE" method="POST">
+          <!-- <form> -->
             <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i> Delete</button>
           </form>
         </ul>
@@ -17,9 +27,9 @@
     </div>
     <p>{{content}}</p>
     {{#sessionOwns}}
-    <form id="edit{{commentId}}" class="inactive" action="/posts/{{id}}/comments/{{commentId}}?_method=PUT" method="POST">
+    <form id="edit{{commentId}}" class="inactive edit-comment-form" action="/posts/{{id}}/comments/{{commentId}}?_method=PUT" method="POST">
       <textarea name="comment[content]">{{content}}</textarea>
-      <button type="submit">Submit changes</button>
+      <button class="btn-primary" type="submit">Submit changes</button>
     </form>
     {{/sessionOwns}}
   </div>

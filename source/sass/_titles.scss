@@ -11,3 +11,14 @@
   @extend %title;
   font-size: 1.3em;
 }
+
+.message {
+  @extend %title;
+  align-self: center;
+  color: rgba(black, 0.5);
+  font-size: 1.3em;
+}
+
+.author {
+  font-weight: 700;
+}

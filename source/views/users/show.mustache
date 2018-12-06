@@ -2,7 +2,12 @@
 {{> ./partials/navbar}}
 
 <section id="user-profile">
-  <img class="avatar-xlg" src="{{API_HOST}}/{{profilePic}}">
+  {{#profilePic}}
+    <img class="avatar-xlg" src="{{API_HOST}}/{{profilePic}}">
+  {{/profilePic}}
+  {{^profilePic}}
+    <img class="avatar-xlg" src="/assets/placeholder/blank-pp.png">
+  {{/profilePic}}
   <h1 class="main-title">
     {{#firstName}}
       {{firstName}}
@@ -23,16 +28,12 @@
       <p>{{posts.length}}</p>
     </div>
     <div class="summary-section">
-      <h2>Comments:</h2>
-      <p>{{comments.length}}</p>
-    </div>
-    <div class="summary-section">
-      <h2>Level:</h2>
-      <p>{{#level}}{{level}}{{/level}}{{^level}}0{{/level}}</p>
-    </div>
-    <div class="summary-section">
       <h2>Avg. score:</h2>
       <p><i class="fas fa-star"></i> 0</p>
+    </div>
+    <div class="summary-section">
+      <h2>Comments:</h2>
+      <p>{{comments.length}}</p>
     </div>
   </summary>
   {{#hasSession}}
@@ -42,7 +43,7 @@
     <button><i class="fas fa-ellipsis-h"></i></button>
     <ul class="dropdown-content">
       <form action="/users/{{id}}/friends" method="POST">
-        <button type="submit"><i class="fas fa-user-friends"></i> Add Friend</button>
+        <button class="btn-secondary" type="submit"><i class="fas fa-user-friends"></i> Add Friend</button>
       </form>
     </ul>
   </div>

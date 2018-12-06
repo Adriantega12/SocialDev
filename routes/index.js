@@ -8,6 +8,10 @@ const authRoutes = require('./auth');
 const usersRoutes = require('./users');
 const postsRoutes = require('./posts');
 
+router.get('/', (req, res) => {
+  res.render('index');
+});
+
 router.use('/', authRoutes);
 
 router.use('/network', PostsController.getNetworkFeed);

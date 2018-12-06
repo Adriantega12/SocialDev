@@ -3,9 +3,6 @@ const { CommentsController } = require('../controllers');
 
 const router = Router({ mergeParams: true });
 
-// INDEX Comment
-router.get('/', CommentsController.getAll);
-
 // NEW Comment
 router.post('/', CommentsController.insert);
 

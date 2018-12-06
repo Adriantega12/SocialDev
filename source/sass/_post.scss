@@ -1,6 +1,7 @@
 #post-content {
   text-align: justify;
   line-height: 1.5em;
+  margin-bottom: 16px;
 }
 
 #author-sum {
@@ -13,6 +14,8 @@
     .btn {
       padding: 2px 0;
       min-width: 128px;
+      border: none;
+      border-radius: 0;
     }
     .btn:hover {
       color: $gray;
@@ -36,9 +39,66 @@
   align-self: center;
   justify-content: center;
   width: 50%;
+  button {
+    margin-top: 8px;
+  }
 }
 
-#reply-comment .summary form {
+#reply-comment {
+  .summary {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+#create-post {
+  > form {
+    > * {
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      height: 20em;
+    }
+
+    .btn-secondary {
+      text-align: center;
+    }
+
+    #submit-post {
+      display: flex;
+      justify-content: space-around;
+      .btn {
+        width: 100%;
+      }
+
+      .btn:first-child {
+        margin-right: 5px;
+      }
+
+      .btn:last-child {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+#score {
+  padding-left: 16px;
+
+  .unchecked {
+    opacity: 0.5;
+  }
+}
+
+.edit-comment-form {
   display: flex;
   flex-direction: column;
+
+  textarea {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 }
