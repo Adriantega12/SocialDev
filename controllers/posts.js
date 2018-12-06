@@ -131,7 +131,7 @@ class PostsController {
   static async delete(req, res, next) {
     try {
       await Post.delete(req.params.postId, req.cookies[`${process.env.COOKIE_NAME}`]);
-      res.redirect('/posts');
+      res.redirect(`/users/${req.session.user.id}`);
     } catch (error) {
       next(error);
     }

@@ -5,9 +5,6 @@ const commentsRoutes = require('./comments');
 
 const router = Router();
 
-// INDEX Post
-router.get('/', PostsController.getAll);
-
 // CREATE Post view
 router.get('/new', Auth.requireSession, (req, res) => {
   res.render('posts/new');
